@@ -52,13 +52,13 @@ From experience, installing the package will result in numerous warnings, the ma
 Firstly, warnings related to code formatting **can be automatically corrected**. This includes: indentation, unnecessary spaces, empty lines, braces, file-scoped namespaces, unnecessary using directives, etc. Here is the command to execute:
 
 ```
-dotnet format <path_to_your_solution_or_project> --severity warn --diagnostics IDE0001 IDE0004 IDE0005 IDE0007 IDE0009 IDE0011 IDE0055 IDE0161 IDE2000 IDE2001 IDE2002 IDE2003 IDE2004 IDE2005 IDE2006
+dotnet format <path_to_your_solution_or_project> --diagnostics IDE0001 IDE0004 IDE0005 IDE0007 IDE0009 IDE0011 IDE0055 IDE0161 IDE2000 IDE2001 IDE2002 IDE2003 IDE2004 IDE2005 IDE2006 --verbosity diagnostic
 ```
 
 Once the pull request is merged, one can then attempt to automatically correct the remaining warnings. Without the noise of formatting warnings, it will be easier to focus on them:
 
 ```
-dotnet format <path_to_your_solution_or_project> --severity warn
+dotnet format <path_to_your_solution_or_project> --severity warn --verbosity diagnostic
 ```
 
 You can also modify the command to specify the IDs of the analysis rules you wish to automatically correct (if a fix is available). In this way, you avoid manual work, and breaking the correction into several pull requests will increase developers' confidence in the process of adopting new standards.
