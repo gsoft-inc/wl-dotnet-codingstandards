@@ -1,0 +1,11 @@
+# global_level must be higher than the .NET Analyzer files
+is_global = true
+global_level = 0
+
+# GMNG01: Add 'IndexBy' or 'NoIndexNeeded' attributes on the containing type
+# Disabled because specifying MongoDB indexes is only required for production code, not for test projects
+dotnet_diagnostic.GMNG01.severity = none
+
+# GMDTR12: Use method ending with 'Async' instead
+# Disabled because our MediatR static extension method that ends with "Async" cannot be mocked in unit tests so developers have to use the "Send" method instead
+dotnet_diagnostic.GMDTR12.severity = none

@@ -1,0 +1,10 @@
+is_global = true
+global_level = -1
+
+# Disable some ReSharper / Rider inspections already covered by .NET analyzers
+
+# Already covered by IDE0130
+resharper_check_namespace_highlighting = none
+
+# Already covered by file defaults "insert_final_newline"
+csharp_insert_final_newline = false

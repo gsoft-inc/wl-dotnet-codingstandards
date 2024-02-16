@@ -1,0 +1,24 @@
+name: Publish
+
+on:
+  push:
+    branches: [main]
+    tags: ["*.*.*"]
+    paths-ignore: ["*.md"]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+
+      - run: ./Build.ps1
+        shell: pwsh
+        env:
+          NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
+          NUGET_API_KEY: ${{ secrets.WORKLEAP_NUGET_API_KEY }}

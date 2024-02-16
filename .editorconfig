@@ -1,0 +1,45 @@
+root = true
+
+# Default settings
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Xml project files
+[*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj}]
+indent_size = 2
+ij_xml_space_inside_empty_tag = true
+
+# Xml files
+[*.{xml,stylecop,resx,ruleset}]
+indent_size = 2
+ij_xml_space_inside_empty_tag = true
+
+# Xml config files
+[*.{props,targets,config,nuspec,conf}]
+indent_size = 2
+ij_xml_space_inside_empty_tag = true
+
+# YAML config files
+[*.{yml,yaml}]
+indent_size = 2
+
+# Shell scripts
+[*.{sh,ps1}]
+end_of_line = lf
+indent_size = 2
+
+[*.{cmd,bat}]
+end_of_line = crlf
+indent_size = 2
+
+# JSON
+[*.{json,json5,jsonc}]
+indent_size = 2
+
+# CSharp
+[*.cs]
+max_line_length = off

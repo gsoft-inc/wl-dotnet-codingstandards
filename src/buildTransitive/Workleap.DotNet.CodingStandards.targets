@@ -1,0 +1,31 @@
+<Project>
+  <!-- Register the EditorConfig files to the project -->
+  <!-- Remember that a particular .NET analysis rule can only be configured once across all imported global EditorConfig files -->
+  <ItemGroup>
+    <!-- Basic EditorConfig settings such as encoding, indentation, etc. -->
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\1_FileDefaults.editorconfig" />
+
+    <!-- C# code style -->
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\2_CodeStyle.editorconfig" />
+
+    <!-- .NET analyzers configuration for all projects, enforcing C# code style, quality, performance and security -->
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\3_AllProjectsAnalyzers.editorconfig" />
+
+    <!-- Configure ReSharper analyzers that overlaps with built-in .NET analyzers (only appears in Rider and VisualStudio IDEs) -->
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\4_ReSharperAnalyzers.editorconfig" />
+
+    <!-- .NET analyzers configuration only for test projects -->
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\5_TestProjectsAnalyzers.editorconfig" Condition="'$(IsTestProject)' == 'true'" />
+  </ItemGroup>
+
+  <!-- Banned Symbols -->
+  <PropertyGroup>
+    <IncludeDefaultBannedSymbols Condition="$(IncludeDefaultBannedSymbols) == ''">true</IncludeDefaultBannedSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)\..\files\BannedSymbols.txt"
+      Condition="$(IncludeDefaultBannedSymbols) == 'true'"
+      Visible="false" />
+  </ItemGroup>
+</Project>

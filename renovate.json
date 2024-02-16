@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "platform": "github",
+  "labels": ["renovate"],
+  "extends": [
+    "config:base",
+    ":rebaseStalePrs"
+  ],
+  "enabledManagers": [
+    "github-actions",
+    "nuget"
+  ],
+  "stabilityDays": 3,
+  "prHourlyLimit": 0,
+  "prConcurrentLimit": 0,
+  "branchConcurrentLimit": 0,
+  "dependencyDashboard": false,
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "packageRules": [
+    {
+      "matchManagers": ["nuget"],
+      "groupName": "NuGet dependencies"
+    },
+    {
+      "matchPackageNames": ["dotnet-sdk"],
+      "groupName": "Dotnet SDK",
+      "description": "Only update patch and minor for the dotnet SDK version within the global.json",
+      "extends": [":disableMajorUpdates"]
+    },
+    {
+      "matchManagers": ["github-actions"],
+      "groupName": "Pipeline dependencies"
+    }
+  ],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "labels": ["security"]
+  }
+}
