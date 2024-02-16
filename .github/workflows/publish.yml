@@ -20,5 +20,5 @@ jobs:
       - run: ./Build.ps1
         shell: pwsh
         env:
-          NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
+          NUGET_SOURCE: ${{ secrets.NUGET_GSOFT_FEED_URL }}
           NUGET_API_KEY: ${{ secrets.WORKLEAP_NUGET_API_KEY }}
