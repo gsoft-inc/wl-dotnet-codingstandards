@@ -1,6 +1,5 @@
 <Project>
   <PropertyGroup>
-    <RestoreUseStaticGraphEvaluation Condition="'$(RestoreUseStaticGraphEvaluation)' == ''">true</RestoreUseStaticGraphEvaluation>
     <ReportAnalyzer Condition="'$(ReportAnalyzer)' == ''">true</ReportAnalyzer>
     <Features Condition="'$(Features)' == ''">strict</Features>
     <Deterministic Condition="'$(Deterministic)' == ''">true</Deterministic>
@@ -8,6 +7,9 @@
     <AnalysisLevel Condition="'$(AnalysisLevel)' == ''">latest-all</AnalysisLevel>
     <EnforceCodeStyleInBuild Condition="'$(EnforceCodeStyleInBuild)' == ''">true</EnforceCodeStyleInBuild>
     <NoWarn>$(NoWarn);CA1014</NoWarn>
+
+    <!-- https://learn.microsoft.com/en-us/nuget/release-notes/nuget-5.5#summary-whats-new-in-55 -->
+    <RestoreUseStaticGraphEvaluation Condition="'$(RestoreUseStaticGraphEvaluation)' == ''">true</RestoreUseStaticGraphEvaluation>
 
     <!-- Enable ContinuousIntegrationBuild when running on CI -->
     <ContinuousIntegrationBuild Condition="'$(TF_BUILD)' == 'true'">true</ContinuousIntegrationBuild>
