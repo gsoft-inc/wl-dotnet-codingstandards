@@ -1,0 +1,34 @@
+name: Jira
+
+on:
+  pull_request:
+    branches: [main]
+    paths-ignore: ["*.md"]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Jira Story
+        shell: pwsh
+        run: |
+          Install-Module JiraPS -Scope CurrentUser -Force
+          if ("$env:GITHUB_HEAD_REF" -like "*renovate/*" -eq $True)
+          {
+            Write-Host "Skipping, renovate branch detected"
+            return
+          }
+
+          Set-JiraConfigServer -Server "${{ secrets.JIRA_URL }}"
+          if("$env:GITHUB_HEAD_REF" -match "[A-Za-z]+[_-][0-9]+" -eq $False)
+          {
+            throw "Branch name $env:GITHUB_HEAD_REF doesn't respect the required pattern."
+          }
+
+          $JiraIssueKey = $Matches[0]
+          $PWord = ConvertTo-SecureString -String "${{ secrets.JIRA_API_TOKEN }}" -AsPlainText -Force
+          $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList "${{ secrets.JIRA_USERNAME }}", $PWord
+
+          Write-Host "Retrieving Jira issue with number $JiraIssueKey"
+          Get-JiraIssue -Key $JiraIssueKey -Credential $Credential -ErrorAction Stop | out-null
+          Write-Host "Successfully retrieved Jira issue"

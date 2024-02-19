@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+    paths-ignore: ["*.md"]
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          source-url: ${{ secrets.NUGET_GSOFTDEV_FEED_URL }}
+        env:
+          NUGET_AUTH_TOKEN: ${{ secrets.GSOFT_NUGET_API_KEY }}
+
+      - run: ./Build.ps1
+        shell: pwsh
+        env:
+          NUGET_SOURCE: ${{ secrets.NUGET_GSOFTDEV_FEED_URL }}
+          NUGET_API_KEY: ${{ secrets.GSOFT_NUGET_API_KEY }}
