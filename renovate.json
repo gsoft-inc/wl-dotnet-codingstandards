@@ -32,6 +32,19 @@
       "groupName": "Pipeline dependencies"
     }
   ],
+  "customManagers": [
+    {
+      "description": "nuspec files manager (not built-in in Renovate's nuget manager)",
+      "customType": "regex",
+      "fileMatch": ["\\.nuspec$"],
+      "matchStringsStrategy": "any",
+      "matchStrings": [
+        "<dependency\\s+id=\"(?<depName>.*?)\"\\s+version=\"(?<currentValue>.*?)\"\\s*\\/>"
+      ],
+      "datasourceTemplate": "nuget",
+      "versioningTemplate": "nuget"
+    }
+  ],
   "vulnerabilityAlerts": {
     "enabled": true,
     "labels": ["security"]
