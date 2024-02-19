@@ -407,7 +407,7 @@ dotnet_diagnostic.CA1311.severity = suggestion
 dotnet_diagnostic.CA1507.severity = none
 
 # CA1508: Avoid dead conditional code
-# Disabled because provides false positives in cases with double checked locking
+# Disabled because provides false positives in cases with double checked locking and has performance impact
 dotnet_diagnostic.CA1508.severity = none
 
 # CA1510: Use ArgumentNullException throw helper (ArgumentNullException.ThrowIfNull)
@@ -417,7 +417,7 @@ dotnet_diagnostic.CA1510.severity = suggestion
 # Disabled because this is a common practice in test method names (and other cases)
 dotnet_diagnostic.CA1707.severity = none
 
-#CA1710: Identifiers should have correct suffix
+# CA1710: Identifiers should have correct suffix
 # Disabled because it's simply annoying (streams types must end with 'Stream', same for queue, stack, collection, dictionary, etc.)
 dotnet_diagnostic.CA1710.severity = none
 
@@ -426,7 +426,7 @@ dotnet_diagnostic.CA1710.severity = none
 dotnet_diagnostic.CA1711.severity = none
 
 # CA1716: Identifiers should not match keywords
-# Some method names such as "Get" or "Set" should be allowed
+# Some method names such as "Get" or "Set" should be allowed. This rule exists mostly because of VB.NET. As we don't use it, this is fine to disable the rule.
 dotnet_diagnostic.CA1716.severity = none
 
 # CA1720: Identifiers should not contain type names
@@ -458,7 +458,7 @@ dotnet_diagnostic.CA1848.severity = none
 dotnet_diagnostic.CA1859.severity = none
 
 # CA1863: Use 'CompositeFormat'
-# Disabled, this is faily new and the performance gains over string.Format isn't worth it
+# Disabled, this is fairly new and the performance gains over string.Format isn't worth it
 dotnet_diagnostic.CA1863.severity = none
 
 # CA2000: Dispose objects before losing scope
@@ -484,7 +484,7 @@ dotnet_diagnostic.CA2225.severity = none
 dotnet_diagnostic.CA2227.severity = none
 
 # CA2229: Implement serialization constructors
-# Disabled to not enforce the creation of exception constructors accepting a SerializationInfo and StreamingContext
+# Disabled to not enforce the creation of exception constructors accepting a SerializationInfo and StreamingContext. BinarySerializer is now obsolete and will be removed from .NET 9.
 dotnet_diagnostic.CA2229.severity = none
 
 # CA2234: Pass System.Uri objects instead of strings
