@@ -433,11 +433,11 @@ dotnet_diagnostic.CA1716.severity = none
 dotnet_diagnostic.CA1720.severity = none
 
 # CA1724: Type names should not match namespaces
-# Disabled because this is usually recommended for library authors
+# Disabled to increase the adoption of this library, as many projects have classes with the same name of the namespace
 dotnet_diagnostic.CA1724.severity = none
 
 # CA1805: Do not initialize unnecessarily
-dotnet_diagnostic.CA1805.severity = none
+dotnet_diagnostic.CA1805.severity = warning
 
 # CA1812: Allow unreferenced code to exist
 dotnet_diagnostic.CA1812.severity = none
@@ -466,7 +466,7 @@ dotnet_diagnostic.CA1863.severity = none
 dotnet_diagnostic.CA2000.severity = none
 
 # CA2007: Do not directly await a Task
-# Disabled because using ConfigureAwait(true) isn't necessary in ASP.NET Core as there is no synchronization context
+# Disabled because using ConfigureAwait(true) isn't necessary in ASP.NET Core (MVC & APIs) as there is no synchronization context
 dotnet_diagnostic.CA2007.severity = none
 
 # CA2008: Do not create tasks without passing a TaskScheduler
@@ -492,10 +492,10 @@ dotnet_diagnostic.CA2229.severity = none
 dotnet_diagnostic.CA2234.severity = none
 
 # CA2329: Do not deserialize with JsonSerializer using an insecure configuration
+dotnet_diagnostic.CA2329.severity = warning
+
 # CA2330: Ensure that JsonSerializer has a secure configuration when deserializing
-# Disabled because System.Text.Json is preferred over Newtonsoft.Json
-dotnet_diagnostic.CA2329.severity = none
-dotnet_diagnostic.CA2330.severity = none
+dotnet_diagnostic.CA2330.severity = warning
 
 # Various security rules that are highly unlikely to be necessary when using a proper SAST tool
 # Most of them are concerning the use of non-validated user input in various contexts
