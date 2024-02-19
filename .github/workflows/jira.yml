@@ -20,7 +20,7 @@ jobs:
           }
 
           Set-JiraConfigServer -Server "${{ secrets.JIRA_URL }}"
-          if("$env:GITHUB_HEAD_REF" -match "IDP-[0-9]+" -eq $False)
+          if("$env:GITHUB_HEAD_REF" -match "[A-Za-z]+[_-][0-9]+" -eq $False)
           {
             throw "Branch name $env:GITHUB_HEAD_REF doesn't respect the required pattern."
           }
