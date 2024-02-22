@@ -1,0 +1,29 @@
+<Project>
+  <PropertyGroup>
+    <ReportAnalyzer Condition="'$(ReportAnalyzer)' == ''">true</ReportAnalyzer>
+    <Features Condition="'$(Features)' == ''">strict</Features>
+    <Deterministic Condition="'$(Deterministic)' == ''">true</Deterministic>
+    <EnableNETAnalyzers Condition="'$(EnableNETAnalyzers)' == ''">true</EnableNETAnalyzers>
+    <AnalysisLevel Condition="'$(AnalysisLevel)' == ''">latest-all</AnalysisLevel>
+    <EnforceCodeStyleInBuild Condition="'$(EnforceCodeStyleInBuild)' == ''">true</EnforceCodeStyleInBuild>
+
+    <!-- https://learn.microsoft.com/en-us/nuget/release-notes/nuget-5.5#summary-whats-new-in-55 -->
+    <RestoreUseStaticGraphEvaluation Condition="'$(RestoreUseStaticGraphEvaluation)' == ''">true</RestoreUseStaticGraphEvaluation>
+
+    <!-- Enable ContinuousIntegrationBuild when running on CI -->
+    <ContinuousIntegrationBuild Condition="'$(TF_BUILD)' == 'true'">true</ContinuousIntegrationBuild>
+    <ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
+    <ContinuousIntegrationBuild Condition="'$(GITLAB_CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <ContinuousIntegrationBuild Condition="'$(TEAMCITY_VERSION)' != ''">true</ContinuousIntegrationBuild>
+
+    <!-- TreatWarningsAsErrors is enabled for release builds, unless explicitly set -->
+    <TreatWarningsAsErrors Condition="'$(Configuration)' == 'Release' AND '$(TreatWarningsAsErrors)' == ''">true</TreatWarningsAsErrors>
+
+    <!-- https://devblogs.microsoft.com/visualstudio/vs-toolbox-accelerate-your-builds-of-sdk-style-net-projects/ -->
+    <AccelerateBuildsInVisualStudio Condition="'$(AccelerateBuildsInVisualStudio)' == ''">true</AccelerateBuildsInVisualStudio>
+
+    <!-- GenerateDocumentationFile must be set to true for IDE0005 (Remove unnecessary usings/imports) to work -->
+    <GenerateDocumentationFile Condition="'$(GenerateDocumentationFile)' == ''">true</GenerateDocumentationFile>
+  </PropertyGroup>
+</Project>
