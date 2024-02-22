@@ -37,7 +37,7 @@ public sealed class PackageFixture : IAsyncLifetime
             var p = Process.Start(psi);
             await p.WaitForExitAsync();
             if (p.ExitCode != 0)
-                throw new Exception("Error when running creating the NuGet package");
+                throw new InvalidOperationException("Error when running creating the NuGet package");
         }
     }
 
