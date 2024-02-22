@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using CliWrap;
 using Meziantou.Framework;
 using Workleap.DotNet.CodingStandards.Tests.Helpers;
@@ -12,19 +13,32 @@ public sealed class PackageFixture : IAsyncLifetime
 
     public async Task InitializeAsync()
     {
-        // On CI the exe is already present
-        var exe = "nuget";
+        var nuspecPath = PathHelpers.GetRootDirectory() / "Workleap.DotNet.CodingStandards.nuspec";
+        string[] args = ["pack", nuspecPath, "-ForceEnglishOutput", "-Version", "999.9.9", "-OutputDirectory", _packageDirectory.FullPath];
+
         if (OperatingSystem.IsWindows())
         {
-            var downloadPath = FullPath.GetTempPath() / $"nuget-{Guid.NewGuid()}.exe";
-            await DownloadFileAsync("https://dist.nuget.org/win-x86-commandline/latest/nuget.exe", downloadPath);
-            exe = downloadPath;
-        }
+            var exe = FullPath.GetTempPath() / $"nuget-{Guid.NewGuid()}.exe";
+            await DownloadFileAsync("https://dist.nuget.org/win-x86-commandline/latest/nuget.exe", exe);
 
-        var nuspecPath = PathHelpers.GetRootDirectory() / "Workleap.DotNet.CodingStandards.nuspec";
-        await Cli.Wrap(exe)
-            .WithArguments(["pack", nuspecPath, "-ForceEnglishOutput", "-Version", "999.9.9", "-OutputDirectory", _packageDirectory.FullPath])
-            .ExecuteAsync();
+            await Cli.Wrap(exe)
+                .WithArguments(args)
+                .ExecuteAsync();
+        }
+        else
+        {
+            // CliWrap doesn't support UseShellExecute. On Linux, it's easier to use it as "nuget" is a shell script that use mono to run nuget.exe
+            var psi = new ProcessStartInfo("nuget");
+            foreach (var arg in args)
+            {
+                psi.ArgumentList.Add(arg);
+            }
+
+            var p = Process.Start(psi);
+            await p.WaitForExitAsync();
+            if (p.ExitCode != 0)
+                throw new Exception("Error when running creating the NuGet package");
+        }
     }
 
     public async Task DisposeAsync()

@@ -31,7 +31,6 @@ Process {
     Exec { & nuget pack Workleap.DotNet.CodingStandards.nuspec -OutputDirectory $outputDir -Version $version -ForceEnglishOutput }
 
     # Run tests
-    Get-Command nuget
     Exec { & dotnet test }
 
     # Push to a NuGet feed if the environment variables are set
