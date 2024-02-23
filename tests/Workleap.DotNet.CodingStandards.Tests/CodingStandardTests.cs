@@ -3,7 +3,7 @@ using Xunit.Abstractions;
 
 namespace Workleap.DotNet.CodingStandards.Tests;
 
-public class UnitTest1(PackageFixture fixture, ITestOutputHelper testOutputHelper) : IClassFixture<PackageFixture>
+public sealed class CodingStandardTests(PackageFixture fixture, ITestOutputHelper testOutputHelper) : IClassFixture<PackageFixture>
 {
     [Fact]
     public async Task BannedSymbolsAreReported()
