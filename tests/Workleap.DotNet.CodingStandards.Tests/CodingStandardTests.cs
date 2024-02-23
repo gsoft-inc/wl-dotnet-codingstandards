@@ -63,5 +63,4 @@ public sealed class CodingStandardTests(PackageFixture fixture, ITestOutputHelpe
         Assert.False(data.HasError("IDE1006"));
         Assert.False(data.HasWarning("IDE1006"));
     }
-
 }

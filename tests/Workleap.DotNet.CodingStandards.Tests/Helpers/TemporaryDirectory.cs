@@ -2,26 +2,26 @@ namespace Workleap.DotNet.CodingStandards.Tests.Helpers;
 
 internal sealed class TemporaryDirectory : IDisposable
 {
-    private TemporaryDirectory(string fullPath) => FullPath = fullPath;
+    private TemporaryDirectory(string fullPath) => this.FullPath = fullPath;
 
     public string FullPath { get; }
 
     public static TemporaryDirectory Create()
     {
         var path = Path.GetFullPath(Path.Combine(Path.GetTempPath(), Guid.NewGuid().ToString("N")));
-        Directory.CreateDirectory(path);
+        _ = Directory.CreateDirectory(path);
         return new TemporaryDirectory(path);
     }
 
     public string GetPath(string relativePath)
     {
-        return Path.Combine(FullPath, relativePath);
+        return Path.Combine(this.FullPath, relativePath);
     }
 
     public void CreateTextFile(string relativePath, string content)
     {
-        var path = GetPath(relativePath);
-        Directory.CreateDirectory(Path.GetDirectoryName(path));
+        var path = this.GetPath(relativePath);
+        _ = Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         File.WriteAllText(path, content);
     }
 
@@ -29,7 +29,7 @@ internal sealed class TemporaryDirectory : IDisposable
     {
         try
         {
-            Directory.Delete(FullPath, recursive: true);
+            Directory.Delete(this.FullPath, recursive: true);
         }
         catch
         {

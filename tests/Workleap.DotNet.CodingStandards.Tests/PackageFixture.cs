@@ -8,19 +8,19 @@ public sealed class PackageFixture : IAsyncLifetime
 {
     private readonly TemporaryDirectory _packageDirectory = TemporaryDirectory.Create();
 
-    public string PackageDirectory => _packageDirectory.FullPath;
+    public string PackageDirectory => this._packageDirectory.FullPath;
 
     public async Task InitializeAsync()
     {
         var nuspecPath = Path.Combine(PathHelpers.GetRootDirectory(), "Workleap.DotNet.CodingStandards.nuspec");
-        string[] args = ["pack", nuspecPath, "-ForceEnglishOutput", "-Version", "999.9.9", "-OutputDirectory", _packageDirectory.FullPath];
+        string[] args = ["pack", nuspecPath, "-ForceEnglishOutput", "-Version", "999.9.9", "-OutputDirectory", this._packageDirectory.FullPath];
 
         if (OperatingSystem.IsWindows())
         {
             var exe = Path.Combine(Path.GetTempPath(), $"nuget-{Guid.NewGuid()}.exe");
             await DownloadFileAsync("https://dist.nuget.org/win-x86-commandline/latest/nuget.exe", exe);
 
-            await Cli.Wrap(exe)
+            _ = await Cli.Wrap(exe)
                 .WithArguments(args)
                 .ExecuteAsync();
         }
@@ -33,22 +33,24 @@ public sealed class PackageFixture : IAsyncLifetime
                 psi.ArgumentList.Add(arg);
             }
 
-            var p = Process.Start(psi);
+            var p = Process.Start(psi)!;
             await p.WaitForExitAsync();
             if (p.ExitCode != 0)
+            {
                 throw new InvalidOperationException("Error when running creating the NuGet package");
+            }
         }
     }
 
     public Task DisposeAsync()
     {
-        _packageDirectory.Dispose();
+        this._packageDirectory.Dispose();
         return Task.CompletedTask;
     }
 
     private static async Task DownloadFileAsync(string url, string path)
     {
-        Directory.CreateDirectory(Path.GetDirectoryName(path));
+        _ = Directory.CreateDirectory(Path.GetDirectoryName(path)!);
         await using var nugetStream = await SharedHttpClient.Instance.GetStreamAsync(url);
         await using var fileStream = File.Create(path);
         await nugetStream.CopyToAsync(fileStream);

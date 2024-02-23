@@ -1,4 +1,3 @@
-#nullable enable
 namespace Workleap.DotNet.CodingStandards.Tests.Helpers;
 internal static class SharedHttpClient
 {
@@ -18,7 +17,7 @@ internal static class SharedHttpClient
     {
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            const int MaxRetries = 5;
+            const int maxRetries = 5;
             var defaultDelay = TimeSpan.FromMilliseconds(200);
             for (var i = 1; ; i++, defaultDelay *= 2)
             {
@@ -52,18 +51,22 @@ internal static class SharedHttpClient
                 {
                     result?.Dispose();
                     if (IsLastAttempt(i))
+                    {
                         throw;
+                    }
                 }
                 catch (TaskCanceledException ex) when (ex.CancellationToken != cancellationToken) // catch "The request was canceled due to the configured HttpClient.Timeout of 100 seconds elapsing"
                 {
                     result?.Dispose();
                     if (IsLastAttempt(i))
+                    {
                         throw;
+                    }
                 }
 
                 await Task.Delay(delayHint is { } someDelay && someDelay > TimeSpan.Zero ? someDelay : defaultDelay, cancellationToken).ConfigureAwait(false);
 
-                static bool IsLastAttempt(int i) => i >= MaxRetries;
+                static bool IsLastAttempt(int i) => i >= maxRetries;
             }
         }
     }
