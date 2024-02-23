@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using CliWrap;
+using CliWrap.Buffered;
 using Workleap.DotNet.CodingStandards.Tests.Helpers;
 
 namespace Workleap.DotNet.CodingStandards.Tests;
@@ -26,19 +26,9 @@ public sealed class PackageFixture : IAsyncLifetime
         }
         else
         {
-            // CliWrap doesn't support UseShellExecute. On Linux, it's easier to use it as "nuget" is a shell script that use mono to run nuget.exe
-            var psi = new ProcessStartInfo("nuget");
-            foreach (var arg in args)
-            {
-                psi.ArgumentList.Add(arg);
-            }
-
-            var p = Process.Start(psi)!;
-            await p.WaitForExitAsync();
-            if (p.ExitCode != 0)
-            {
-                throw new InvalidOperationException("Error when running creating the NuGet package");
-            }
+            _ = await Cli.Wrap("nuget")
+                 .WithArguments(args)
+                 .ExecuteBufferedAsync();
         }
     }
 
