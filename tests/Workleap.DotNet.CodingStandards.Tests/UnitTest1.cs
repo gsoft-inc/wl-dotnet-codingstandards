@@ -8,7 +8,7 @@ public class UnitTest1(PackageFixture fixture, ITestOutputHelper testOutputHelpe
     [Fact]
     public async Task BannedSymbolsAreReported()
     {
-        await using var project = new ProjectBuilder(fixture, testOutputHelper);
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
         project.AddCsprojFile();
         project.AddFile("sample.cs", "_ = System.DateTime.Now;");
         var data = await project.BuildAndGetOutput();
@@ -18,7 +18,7 @@ public class UnitTest1(PackageFixture fixture, ITestOutputHelper testOutputHelpe
     [Fact]
     public async Task WarningsAsErrorOnGitHubActions()
     {
-        await using var project = new ProjectBuilder(fixture, testOutputHelper);
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
         project.AddCsprojFile();
         project.AddFile("sample.cs", "_ = System.DateTime.Now;");
         var data = await project.BuildAndGetOutput(["--configuration", "Release", "/p:GITHUB_ACTIONS=true"]);
@@ -28,7 +28,7 @@ public class UnitTest1(PackageFixture fixture, ITestOutputHelper testOutputHelpe
     [Fact]
     public async Task NamingConvention_Invalid()
     {
-        await using var project = new ProjectBuilder(fixture, testOutputHelper);
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
         project.AddCsprojFile();
         project.AddFile("sample.cs", """
             _ = "";
@@ -49,7 +49,7 @@ public class UnitTest1(PackageFixture fixture, ITestOutputHelper testOutputHelpe
     [Fact]
     public async Task NamingConvention_Valid()
     {
-        await using var project = new ProjectBuilder(fixture, testOutputHelper);
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
         project.AddCsprojFile();
         project.AddFile("sample.cs", """
             _ = "";

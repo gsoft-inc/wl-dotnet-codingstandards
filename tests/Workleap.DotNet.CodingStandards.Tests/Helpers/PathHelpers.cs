@@ -1,15 +1,13 @@
-using Meziantou.Framework;
-
 namespace Workleap.DotNet.CodingStandards.Tests.Helpers;
 
 internal static class PathHelpers
 {
-    public static FullPath GetRootDirectory()
+    public static string GetRootDirectory()
     {
-        var directory = FullPath.CurrentDirectory();
-        while (!Directory.Exists(directory / ".git"))
+        var directory = Environment.CurrentDirectory;
+        while (!Directory.Exists(Path.Combine(directory, ".git")))
         {
-            directory = directory.Parent;
+            directory = Path.GetDirectoryName(directory);
         }
 
         return directory;

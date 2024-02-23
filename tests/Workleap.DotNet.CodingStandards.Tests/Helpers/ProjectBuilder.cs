@@ -1,4 +1,3 @@
-using Meziantou.Framework;
 using System.Xml.Linq;
 using Xunit.Abstractions;
 using System.Text.Json;
@@ -6,7 +5,7 @@ using CliWrap;
 
 namespace Workleap.DotNet.CodingStandards.Tests.Helpers;
 
-internal sealed class ProjectBuilder : IAsyncDisposable
+internal sealed class ProjectBuilder : IDisposable
 {
     private const string SarifFileName = "BuildOutput.sarif";
 
@@ -39,12 +38,12 @@ internal sealed class ProjectBuilder : IAsyncDisposable
                 </configuration>
                 """);
 
-        File.Copy(PathHelpers.GetRootDirectory() / "global.json", _directory.FullPath / "global.json");
+        File.Copy(Path.Combine(PathHelpers.GetRootDirectory(), "global.json"), _directory.GetPath("global.json"));
     }
 
     public ProjectBuilder AddFile(string relativePath, string content)
     {
-        File.WriteAllText(_directory.FullPath / relativePath, content);
+        File.WriteAllText(_directory.GetPath(relativePath), content);
         return this;
     }
 
@@ -76,7 +75,7 @@ internal sealed class ProjectBuilder : IAsyncDisposable
                 </Project>
                 """;
 
-        File.WriteAllText(_directory.FullPath / "test.csproj", content);
+        File.WriteAllText(_directory.GetPath("test.csproj"), content);
         return this;
     }
 
@@ -93,11 +92,11 @@ internal sealed class ProjectBuilder : IAsyncDisposable
 
         _testOutputHelper.WriteLine("Process exit code: " + result.ExitCode);
 
-        var bytes = File.ReadAllBytes(_directory.FullPath / SarifFileName);
+        var bytes = File.ReadAllBytes(_directory.GetPath(SarifFileName));
         var sarif = JsonSerializer.Deserialize<SarifFile>(bytes);
         _testOutputHelper.WriteLine("Sarif result:\n" + string.Join("\n", sarif.AllResults().Select(r => r.ToString())));
         return sarif;
     }
 
-    public ValueTask DisposeAsync() => _directory.DisposeAsync();
+    public void Dispose() => _directory.Dispose();
 }
