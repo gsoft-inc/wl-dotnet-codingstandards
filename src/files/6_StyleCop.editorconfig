@@ -1,4 +1,6 @@
-[*.cs]
+# global_level must be higher than the NET Analyzer files
+is_global = true
+global_level = 0
 
 # SA0001: XML comment analysis disabled
 # Help link: https://github.com/DotNetAnalyzers/StyleCopAnalyzers/blob/master/documentation/SA0001.md
