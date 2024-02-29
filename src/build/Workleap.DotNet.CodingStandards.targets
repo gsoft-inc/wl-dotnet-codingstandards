@@ -17,8 +17,8 @@
     <!-- .NET analyzers configuration only for test projects -->
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\5_TestProjectsAnalyzers.editorconfig" Condition="'$(IsTestProject)' == 'true'" />
 
-    <!-- Configure StyleCop, which is only included to fill the gap with a very few rules that are not available out of the box in .NET analyzers -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\6_StyleCop.editorconfig" />
+    <!-- StyleCop analyzers configuration, only included to fill the gap with a very few rules that are not available out of the box in .NET analyzers -->
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\6_StyleCopAnalyzers.editorconfig" />
   </ItemGroup>
 
   <!-- Banned Symbols -->
