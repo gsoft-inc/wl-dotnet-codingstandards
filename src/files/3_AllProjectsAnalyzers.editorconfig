@@ -324,10 +324,10 @@ dotnet_diagnostic.IDE2003.severity = warning
 # IDE2004: Blank line not allowed after constructor initializer colon
 dotnet_diagnostic.IDE2004.severity = warning
 
-# IDE2004: Blank line not allowed after token in conditional expression
+# IDE2005: Blank line not allowed after token in conditional expression
 dotnet_diagnostic.IDE2005.severity = warning
 
-# IDE2004: Blank line not allowed after after token in arrow expression
+# IDE2006: Blank line not allowed after after token in arrow expression
 dotnet_diagnostic.IDE2006.severity = warning
 
 #### Code Analysis rules (CA####) ####
