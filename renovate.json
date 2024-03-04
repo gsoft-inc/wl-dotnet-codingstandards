@@ -8,7 +8,8 @@
   ],
   "enabledManagers": [
     "github-actions",
-    "nuget"
+    "nuget",
+    "custom.regex"
   ],
   "stabilityDays": 3,
   "prHourlyLimit": 0,
