@@ -7,6 +7,9 @@ This package provides a set of **programming standards for .NET projects**, incl
 
 During development, the package will provide warnings :warning: when standards are not met. For a production build (`Release` configuration), these warnings will be treated as errors :x: and will make the build fail.
 
+> [!WARNING]
+> This package only works with [SDK-style projects](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview). Older ASP.NET projects (non-Core) are not supported. The same applies to older desktop applications unless they have migrated to the new `Microsoft.NET.Sdk.WindowsDesktop` SDK.
+
 ## Getting started
 
 Install the NuGet package in your project:
