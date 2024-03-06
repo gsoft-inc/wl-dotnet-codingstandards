@@ -458,7 +458,7 @@ dotnet_diagnostic.CA1848.severity = none
 dotnet_diagnostic.CA1859.severity = none
 
 # CA1860: Avoid using 'Enumerable.Any()' extension method (instead of Length, Count or IsEmpty)
-# Disabled because the modern version of 'Any()' has been significantly optimized for types that implement IReadOnlyCollection
+# Disabled because the modern version of 'Any()' has been significantly optimized for types that implement ICollection
 # 'Any' may also be considered more readable in some cases
 dotnet_diagnostic.CA1860.severity = none
 
