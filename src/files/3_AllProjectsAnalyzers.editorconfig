@@ -324,10 +324,10 @@ dotnet_diagnostic.IDE2003.severity = warning
 # IDE2004: Blank line not allowed after constructor initializer colon
 dotnet_diagnostic.IDE2004.severity = warning
 
-# IDE2004: Blank line not allowed after token in conditional expression
+# IDE2005: Blank line not allowed after token in conditional expression
 dotnet_diagnostic.IDE2005.severity = warning
 
-# IDE2004: Blank line not allowed after after token in arrow expression
+# IDE2006: Blank line not allowed after after token in arrow expression
 dotnet_diagnostic.IDE2006.severity = warning
 
 #### Code Analysis rules (CA####) ####
@@ -456,6 +456,11 @@ dotnet_diagnostic.CA1848.severity = none
 # CA1859: Use concrete types when possible for improved performance
 # Disabled, down-casting doesn't degrade performance that much
 dotnet_diagnostic.CA1859.severity = none
+
+# CA1860: Avoid using 'Enumerable.Any()' extension method (instead of Length, Count or IsEmpty)
+# Disabled because the modern version of 'Any()' has been significantly optimized for types that implement ICollection
+# 'Any' may also be considered more readable in some cases
+dotnet_diagnostic.CA1860.severity = none
 
 # CA1863: Use 'CompositeFormat'
 # Disabled, this is fairly new and the performance gains over string.Format isn't worth it
