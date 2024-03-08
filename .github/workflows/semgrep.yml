@@ -2,49 +2,13 @@ name: Semgrep scan
 
 on:
   pull_request:
-    branches: ["main", "master"]
+    branches: ["main"]
   workflow_dispatch: {}
   schedule:
     - cron: "52 2 * * 6"
 
 jobs:
-  semgrep:
-    runs-on: ubuntu-latest
+  call-workflow-semgrep:
     permissions:
       security-events: write
-
-    container:
-      image: returntocorp/semgrep
-
-    steps:
-      - name: Checkout all commits and tags
-        uses: actions/checkout@v4
-        if: ${{ github.event_name == 'pull_request' }}
-        with:
-          fetch-depth: 0
-
-      - name: Checkout single commit
-        uses: actions/checkout@v4
-        if: ${{ github.event_name != 'pull_request' }}
-
-      - name: Pull request scan
-        if: ${{ github.event_name == 'pull_request' }}
-        run: semgrep scan --config=auto --verbose --time --error --baseline-commit ${{ github.event.pull_request.base.sha }}
-
-      - name: Full scan
-        if: ${{ github.event_name != 'pull_request' }}
-        run: semgrep scan --config=auto --verbose --time --sarif --output report.sarif
-
-      - name: Save report as pipeline artifact
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: report.sarif
-          path: report.sarif
-
-      - name: Publish code scanning alerts
-        if: ${{ github.event_name != 'pull_request' }}
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: report.sarif
-          category: semgrep
+    uses: gsoft-inc/wl-reusable-workflows/.github/workflows/reusable-semgrep-workflow.yml@main
