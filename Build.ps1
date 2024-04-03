@@ -26,7 +26,8 @@ Process {
 
     # Let GitVersion compute the NuGet package version
     $uniqueId = Get-Date -Format "yyyyMMddHHmmss"
-    $version = Exec { & dotnet dotnet-gitversion /output json /showvariable SemVer } + ".$uniqueId"
+    $gitVersion = Exec { & dotnet dotnet-gitversion /output json /showvariable SemVer }
+    $version = "$gitVersion.$uniqueId"
 
     # Pack using NuGet.exe
     Exec { & nuget pack Workleap.DotNet.CodingStandards.nuspec -OutputDirectory $outputDir -Version $version -ForceEnglishOutput }
