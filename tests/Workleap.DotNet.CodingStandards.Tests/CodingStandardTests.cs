@@ -26,6 +26,42 @@ public sealed class CodingStandardTests(PackageFixture fixture, ITestOutputHelpe
     }
 
     [Fact]
+    public async Task MSBuildWarningsAsErrorOnDebugConfiguration()
+    {
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
+        project.AddCsprojFile(packageReferences: new Dictionary<string, string> { { "Azure.Identity", "1.10.4" } });
+        project.AddFile("sample.cs", """
+             namespace sample;
+             public static class Sample
+             {
+                 public static void Main(string[] args)
+                 {
+                 }
+             }
+             """);
+        var data = await project.BuildAndGetOutput();
+        Assert.True(data.HasWarning("NU1902"));
+    }
+
+    [Fact]
+    public async Task MSBuildWarningsAsErrorOnReleaseConfiguration()
+    {
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
+        project.AddCsprojFile(packageReferences: new Dictionary<string, string> { { "Azure.Identity", "1.10.4" } });
+        project.AddFile("sample.cs", """
+             namespace sample;
+             public static class Sample
+             {
+                 public static void Main(string[] args)
+                 {
+                 }
+             }
+             """);
+        var data = await project.BuildAndGetOutput(["--configuration", "Release"]);
+        Assert.True(data.HasError("NU1902"));
+    }
+
+    [Fact]
     public async Task NamingConvention_Invalid()
     {
         using var project = new ProjectBuilder(fixture, testOutputHelper);
