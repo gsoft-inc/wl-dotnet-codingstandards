@@ -25,3 +25,11 @@ jobs:
         env:
           NUGET_SOURCE: ${{ secrets.NUGET_GSOFTDEV_FEED_URL }}
           NUGET_API_KEY: ${{ secrets.GSOFT_NUGET_API_KEY }}
+
+  lint_config:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+      - run: dotnet run --project=tools/ConfigurationFilesGenerator/ConfigurationFilesGenerator.csproj

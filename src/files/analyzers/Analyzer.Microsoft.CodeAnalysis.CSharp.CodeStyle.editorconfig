@@ -305,12 +305,12 @@ dotnet_diagnostic.IDE0071.severity = warning
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE0072.severity = silent
 
-# IDE0073: The file header is missing or not located at the top of the file
+# IDE0073: The file header does not match the required text
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0073
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE0073.severity = silent
 
-# IDE0073: The file header does not match the required text
+# IDE0073: The file header is missing or not located at the top of the file
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0073
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE0073.severity = silent
@@ -550,7 +550,7 @@ dotnet_diagnostic.IDE2005.severity = warning
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE2006.severity = warning
 
-# RemoveUnnecessaryImportsFixable:
+# RemoveUnnecessaryImportsFixable: 
 # Enabled: True, Severity: silent
 dotnet_diagnostic.RemoveUnnecessaryImportsFixable.severity = silent
 

@@ -67,7 +67,7 @@ await Parallel.ForEachAsync(packages, async (item, cancellationToken) =>
             sb.AppendLine();
         }
 
-        foreach (var rule in rules.OrderBy(rule => rule.Id))
+        foreach (var rule in rules.OrderBy(rule => rule.Id).ThenBy(rule => rule.Title))
         {
             var currentRuleConfiguration = currentConfiguration.Rules.FirstOrDefault(r => r.Id == rule.Id);
             var severity = currentRuleConfiguration != null ? currentRuleConfiguration.Severity : rule.DefaultEffectiveSeverity;
