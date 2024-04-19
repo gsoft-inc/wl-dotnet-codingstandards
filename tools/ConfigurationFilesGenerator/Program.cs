@@ -200,7 +200,7 @@ IEnumerable<(string Id, string? Version)> GetReferencedNuGetPackages()
     }
 
     // Add analyzers from the .NET SDK
-    foreach (var package in new[] { "Microsoft.CodeAnalysis.NetAnalyzers", /*"Microsoft.CodeAnalysis.CSharp.CodeStyle"*/ })
+    foreach (var package in new[] { "Microsoft.CodeAnalysis.NetAnalyzers", "Microsoft.CodeAnalysis.CSharp.CodeStyle" })
     {
         yield return (package, null);
     }

@@ -12,10 +12,10 @@
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\analyzers\*.editorconfig" />
 
     <!-- Configure ReSharper analyzers that overlaps with built-in .NET analyzers (only appears in Rider and VisualStudio IDEs) -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\4_ReSharperAnalyzers.editorconfig" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\3_ReSharperAnalyzers.editorconfig" />
 
     <!-- .NET analyzers configuration only for test projects -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\5_TestProjectsAnalyzers.editorconfig" Condition="'$(IsTestProject)' == 'true'" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\4_TestProjectsAnalyzers.editorconfig" Condition="'$(IsTestProject)' == 'true'" />
   </ItemGroup>
 
   <!-- Banned Symbols -->
