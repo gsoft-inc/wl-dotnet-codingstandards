@@ -27,6 +27,9 @@ Process {
     # Let GitVersion compute the NuGet package version
     $version = Exec { & dotnet dotnet-gitversion /output json /showvariable SemVer }
 
+    # Generate .editorconfig files for analyzers
+    Exec { & dotnet run --project=tools/ConfigurationFilesGenerator/ConfigurationFilesGenerator.csproj --configuration Release }
+
     # Pack using NuGet.exe
     Exec { & nuget pack Workleap.DotNet.CodingStandards.nuspec -OutputDirectory $outputDir -Version $version -ForceEnglishOutput }
 
