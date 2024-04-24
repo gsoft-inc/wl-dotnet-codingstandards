@@ -121,7 +121,7 @@ await Parallel.ForEachAsync(packages, async (item, cancellationToken) =>
 
 if (writtenFiles > 0)
 {
-    Console.Error.WriteLine("The content of the .editorconfig files is not up to date. If this occurs on CI, you need to run the Build.ps1 command on your machine and commit the new .editorconfig files.");
+    await Console.Error.WriteLineAsync("The content of the .editorconfig files is not up to date. If this occurs on CI, you need to run the Build.ps1 command on your machine and commit the new .editorconfig files.");
 }
 
 return writtenFiles;
