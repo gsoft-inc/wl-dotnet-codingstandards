@@ -6,6 +6,8 @@
     <EnableNETAnalyzers Condition="'$(EnableNETAnalyzers)' == ''">true</EnableNETAnalyzers>
     <AnalysisLevel Condition="'$(AnalysisLevel)' == ''">latest-all</AnalysisLevel>
     <EnforceCodeStyleInBuild Condition="'$(EnforceCodeStyleInBuild)' == ''">true</EnforceCodeStyleInBuild>
+    <IncludeSymbols Condition="'$(IncludeSymbols)' == ''">true</IncludeSymbols>
+    <SymbolPackageFormat Condition="'$(SymbolPackageFormat)' == ''">snupkg</SymbolPackageFormat>
 
     <!-- https://learn.microsoft.com/en-us/nuget/release-notes/nuget-5.5#summary-whats-new-in-55 -->
     <RestoreUseStaticGraphEvaluation Condition="'$(RestoreUseStaticGraphEvaluation)' == ''">true</RestoreUseStaticGraphEvaluation>
