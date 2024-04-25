@@ -25,9 +25,7 @@ Process {
     Exec { & dotnet tool restore }
 
     # Let GitVersion compute the NuGet package version
-    $shortSHA = Exec { & git rev-parse --short HEAD }
-    $gitVersion = Exec { & dotnet dotnet-gitversion /output json /showvariable SemVer }
-    $version = "$gitVersion.$shortSHA"
+    $version = Exec { & dotnet dotnet-gitversion /output json /showvariable SemVer }
 
     # Pack using NuGet.exe
     Exec { & nuget pack Workleap.DotNet.CodingStandards.nuspec -OutputDirectory $outputDir -Version $version -ForceEnglishOutput }
