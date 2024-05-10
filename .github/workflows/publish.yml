@@ -27,5 +27,5 @@ jobs:
     needs: [main]
     uses: gsoft-inc/wl-reusable-workflows/.github/workflows/linearb-deployment.yml@main
     with:
-      environment: ${{ github.ref == 'refs/heads/main' && "staging" || 'release' }}
+      environment: ${{ github.ref == 'refs/heads/main' && 'staging' || 'release' }}
     secrets: inherit
