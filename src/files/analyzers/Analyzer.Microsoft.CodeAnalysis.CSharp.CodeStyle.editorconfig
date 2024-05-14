@@ -368,7 +368,7 @@ dotnet_diagnostic.IDE0090.severity = silent
 # IDE0100: Remove redundant equality
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0100
 # Enabled: True, Severity: silent
-dotnet_diagnostic.IDE0100.severity = warning
+dotnet_diagnostic.IDE0100.severity = suggestion
 
 # IDE0110: Remove unnecessary discard
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0110
