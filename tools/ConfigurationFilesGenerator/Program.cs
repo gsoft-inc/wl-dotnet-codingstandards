@@ -72,10 +72,10 @@ await Parallel.ForEachAsync(packages, async (item, cancellationToken) =>
             var currentRuleConfiguration = currentConfiguration.Rules.FirstOrDefault(r => r.Id == rule.Id);
             var severity = currentRuleConfiguration != null ? currentRuleConfiguration.Severity : rule.DefaultEffectiveSeverity;
 
-            sb.AppendLine($"# {rule.Id}: {rule.Title}");
+            sb.AppendLine($"# {rule.Id}: {rule.Title?.TrimEnd()}");
             if (!string.IsNullOrEmpty(rule.Url))
             {
-                sb.AppendLine($"# Help link: {rule.Url}");
+                sb.AppendLine($"# Help link: {rule.Url?.TrimEnd()}");
             }
 
             sb.AppendLine($"# Enabled: {rule.Enabled}, Severity: {GetSeverity(rule.DefaultSeverity)}");
@@ -92,16 +92,18 @@ await Parallel.ForEachAsync(packages, async (item, cancellationToken) =>
             sb.AppendLine();
         }
 
+        var text = sb.ToString().ReplaceLineEndings("\n");
+
         if (File.Exists(configurationFilePath))
         {
-            if ((await File.ReadAllTextAsync(configurationFilePath, cancellationToken)).ReplaceLineEndings() == sb.ToString().ReplaceLineEndings())
+            if ((await File.ReadAllTextAsync(configurationFilePath, cancellationToken)).ReplaceLineEndings("\n") == text)
             {
                 return;
             }
         }
 
         configurationFilePath.CreateParentDirectory();
-        await File.WriteAllTextAsync(configurationFilePath, sb.ToString(), cancellationToken);
+        await File.WriteAllTextAsync(configurationFilePath, text, cancellationToken);
         _ = Interlocked.Increment(ref writtenFiles);
 
         static string GetSeverity(DiagnosticSeverity? severity)
