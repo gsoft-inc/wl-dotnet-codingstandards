@@ -98,7 +98,7 @@ All rules included in this package **can be disabled or modified** in an `.edito
     ````
 
 > [!WARNING]
-> Remeber that this should be temporary solution to help adopting the package
+> Remember that this should be temporary solution to help adopting the package
 
 Finally, the warnings breaks the CI because they are treated as errors when building the `Release` configuration. You can disable this behavior by setting the following MSBuild property in the `.csproj` file or in the `Directory.Build.props` file
 
