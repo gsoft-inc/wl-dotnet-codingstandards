@@ -1,4 +1,5 @@
 #pragma warning disable IDE0058 // Expression value is never used
+#pragma warning disable SA1649 // File name should match first type name
 using System.Globalization;
 using System.Runtime.Loader;
 using System.Xml.Linq;
