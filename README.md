@@ -66,7 +66,50 @@ dotnet format <path_to_your_solution_or_project> --severity warn --verbosity dia
 
 You can also modify the command to specify the IDs of the analysis rules you wish to automatically correct (if a fix is available). In this way, you avoid manual work, and breaking the correction into several pull requests will increase developers' confidence in the process of adopting new standards.
 
-All rules included in this package **can be disabled or modified** in an `.editorconfig` file that you can add to your project. You can also **disable a rule for a specific line or block of code** using `#pragma` directives or `[SuppressMessage]` attributes. Learn more about [configuring code analysis rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/suppress-warnings). Remember to always justify why a rule is disabled or modified.
+All rules included in this package **can be disabled or modified** in an `.editorconfig` file that you can add to your project. You can also **disable a rule for a specific line or block of code** using `#pragma` directives or `[SuppressMessage]` attributes. Learn more about [configuring code analysis rules](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/suppress-warnings). Remember to always justify why a rule is disabled or modified. Here're some examples:
+
+- Disable specific diagnostics in the code
+
+    ````c#
+    #pragma warning disable CA2200 // Rethrow to preserve stack details
+    throw e;
+    #pragma warning restore CA2200
+    ````
+
+- Disable specific diagnostics for a method
+
+    ````c#
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Usage", "CA2200:Rethrow to preserve stack details", Justification = "Not production code.")]
+    void Sample()
+    {
+    }
+    ````
+
+- Disable a rule using an .editorconfig
+
+    ````editorconfig
+    # Disable CA2200 globally
+    [*.cs]
+    dotnet_diagnostic.CA2200.severity = none
+
+    # Disable CA2200 for specific files
+    [tests/**/*.cs]
+    dotnet_diagnostic.CA2200.severity = none
+    ````
+
+> [!WARNING]
+> Remember that this should be a temporary solution to help adopting the package
+
+Finally, the warnings breaks the CI because they are treated as errors when building the `Release` configuration. You can disable this behavior by setting the following MSBuild property in the `.csproj` file or in the `Directory.Build.props` file
+
+    ````xml
+    <Project>
+        <PropertyGroup>
+            <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+            <MSBuildTreatWarningsAsErrors>false</MSBuildTreatWarningsAsErrors>
+        </PropertyGroup>
+    </Project>
+    ````
 
 ## References
 

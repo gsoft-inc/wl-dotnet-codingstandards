@@ -9,16 +9,13 @@
     <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\2_CodeStyle.editorconfig" />
 
     <!-- .NET analyzers configuration for all projects, enforcing C# code style, quality, performance and security -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\3_AllProjectsAnalyzers.editorconfig" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\analyzers\*.editorconfig" />
 
     <!-- Configure ReSharper analyzers that overlaps with built-in .NET analyzers (only appears in Rider and VisualStudio IDEs) -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\4_ReSharperAnalyzers.editorconfig" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\3_ReSharperAnalyzers.editorconfig" />
 
     <!-- .NET analyzers configuration only for test projects -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\5_TestProjectsAnalyzers.editorconfig" Condition="'$(IsTestProject)' == 'true'" />
-
-    <!-- StyleCop analyzers configuration, only included to fill the gap with a very few rules that are not available out of the box in .NET analyzers -->
-    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\6_StyleCopAnalyzers.editorconfig" />
+    <EditorConfigFiles Include="$(MSBuildThisFileDirectory)\..\files\4_TestProjectsAnalyzers.editorconfig" Condition="'$(IsTestProject)' == 'true'" />
   </ItemGroup>
 
   <!-- Banned Symbols -->

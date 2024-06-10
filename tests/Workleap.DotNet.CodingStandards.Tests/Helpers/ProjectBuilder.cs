@@ -2,6 +2,7 @@ using System.Xml.Linq;
 using Xunit.Abstractions;
 using System.Text.Json;
 using CliWrap;
+using Xunit.Sdk;
 
 namespace Workleap.DotNet.CodingStandards.Tests.Helpers;
 
@@ -46,14 +47,27 @@ internal sealed class ProjectBuilder : IDisposable
         File.WriteAllText(this._directory.GetPath(relativePath), content);
     }
 
-    public void AddCsprojFile(Dictionary<string, string>? properties = null)
+    public void AddCsprojFile(Dictionary<string, string>? properties = null, Dictionary<string, string>? packageReferences = null)
     {
-        var element = new XElement("PropertyGroup");
+        var propertyElement = new XElement("PropertyGroup");
         if (properties != null)
         {
             foreach (var prop in properties)
             {
-                element.Add(new XElement(prop.Key), prop.Value);
+                propertyElement.Add(new XElement(prop.Key), prop.Value);
+            }
+        }
+
+        var referencesElement = new XElement("ItemGroup");
+        if (packageReferences != null)
+        {
+            foreach (var reference in packageReferences)
+            {
+                var packageReference = new XElement("PackageReference");
+                packageReference.SetAttributeValue("Include", reference.Key);
+                packageReference.SetAttributeValue("Version", reference.Value);
+
+                referencesElement.Add(packageReference);
             }
         }
 
@@ -66,11 +80,12 @@ internal sealed class ProjectBuilder : IDisposable
                     <Nullable>enable</Nullable>
                     <ErrorLog>{SarifFileName},version=2.1</ErrorLog>
                   </PropertyGroup>
-                  {element}
+                  {propertyElement}
 
                   <ItemGroup>
                     <PackageReference Include="Workleap.DotNet.CodingStandards" Version="*" />
                   </ItemGroup>
+                  {referencesElement}
                 </Project>
                 """;
 
@@ -92,9 +107,52 @@ internal sealed class ProjectBuilder : IDisposable
 
         var bytes = await File.ReadAllBytesAsync(this._directory.GetPath(SarifFileName));
         var sarif = JsonSerializer.Deserialize<SarifFile>(bytes) ?? throw new InvalidOperationException("The sarif file is invalid");
+
+        this.AppendAdditionalResult(sarif);
+
         this._testOutputHelper.WriteLine("Sarif result:\n" + string.Join("\n", sarif.AllResults().Select(r => r.ToString())));
         return sarif;
     }
 
     public void Dispose() => this._directory.Dispose();
+
+    private void AppendAdditionalResult(SarifFile sarifFile)
+    {
+        if (this._testOutputHelper is not TestOutputHelper testOutputHelper || sarifFile.Runs == null)
+        {
+            return;
+        }
+
+        var outputLines = testOutputHelper.Output.Split(Environment.NewLine);
+        var customRunResults = new List<SarifFileRunResult>();
+
+        // These rules (for nuget package vulnerability) are not parsed in the sarif file automatically
+        // See https://learn.microsoft.com/en-us/nuget/reference/errors-and-warnings/nu1901-nu1904
+        var scannedRules = new List<string> { "NU1901", "NU1902", "NU1903", "NU1904" }
+            .ToDictionary(x => x, x => $"{x}:");
+
+        foreach (var outputLine in outputLines)
+        {
+            foreach (var scannedRule in scannedRules)
+            {
+                var scannedRuleIndex = outputLine.IndexOf(scannedRule.Value, StringComparison.OrdinalIgnoreCase);
+                if (scannedRuleIndex == -1)
+                {
+                    continue;
+                }
+
+                var previousColonIndex = outputLine.LastIndexOf(':', scannedRuleIndex);
+                var ruleLevel = outputLine.Substring(previousColonIndex + 1, scannedRuleIndex - previousColonIndex - 1).Trim();
+
+                var message = outputLine[(scannedRuleIndex + scannedRule.Value.Length + 1)..];
+                customRunResults.Add(new SarifFileRunResult { Level = ruleLevel, RuleId = scannedRule.Key, Message = new SarifFileRunResultMessage { Text = message } });
+            }
+        }
+
+        var distinctRules = customRunResults
+            .DistinctBy(x => new { x.RuleId, x.Level })
+            .ToArray();
+
+        sarifFile.Runs = sarifFile.Runs.Append(new SarifFileRun { Results = distinctRules }).ToArray();
+    }
 }

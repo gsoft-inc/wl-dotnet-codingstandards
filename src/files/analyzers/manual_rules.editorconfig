@@ -1,0 +1,34 @@
+# These rules are not part of the generated rules.
+# The IDE rules in this file are only available in IDE, not in the build.
+
+# global_level must be higher than the NET Analyzer files
+is_global = true
+global_level = 0
+
+# CS1591: Missing XML comment for publicly visible type or member
+# Disabled because although XML documentation is enabled on the project, documenting everything is not always necessary
+dotnet_diagnostic.CS1591.severity = none
+
+# IDE0001: Simplify name (specifying a full type name is sometimes unnecessary)
+dotnet_diagnostic.IDE0001.severity = warning
+
+# IDE0002: Simplify member access (specifying a type name in a static invocation is sometimes unnecessary)
+dotnet_diagnostic.IDE0002.severity = suggestion
+
+# IDE0003: Remove this or Me qualification (enforce the use of 'this.')
+dotnet_diagnostic.IDE0003.severity = none
+
+# IDE0038: Use pattern matching to avoid is check followed by a cast (without variable)
+dotnet_diagnostic.IDE0038.severity = suggestion
+
+# IDE0049: Use language keywords instead of framework type names for type references
+dotnet_diagnostic.IDE0049.severity = warning
+
+# IDE0081: Remove unnecessary suppression operator
+dotnet_diagnostic.IDE0081.severity = none
+
+# IDE0084: Use pattern matching (IsNot operator)
+dotnet_diagnostic.IDE0084.severity = suggestion
+
+# IDE0140: Simplify object creation
+dotnet_diagnostic.IDE0140.severity = none

@@ -1,0 +1,1589 @@
+# global_level must be higher than the NET Analyzer files
+is_global = true
+global_level = 0
+
+# CA1000: Do not declare static members on generic types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1000
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1000.severity = warning
+
+# CA1001: Types that own disposable fields should be disposable
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1001
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1001.severity = warning
+
+# CA1002: Do not expose generic lists
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1002
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1002.severity = none
+
+# CA1003: Use generic event handler instances
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1003
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1003.severity = warning
+
+# CA1005: Avoid excessive parameters on generic types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1005
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1005.severity = none
+
+# CA1008: Enums should have zero value
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1008
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1008.severity = warning
+
+# CA1010: Generic interface should also be implemented
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1010
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1010.severity = warning
+
+# CA1012: Abstract types should not have public constructors
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1012
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1012.severity = warning
+
+# CA1014: Mark assemblies with CLSCompliant
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1014
+# Enabled: False, Severity: warning
+# Disabled because the types of this project aren't exposed to other programming languages
+dotnet_diagnostic.CA1014.severity = none
+
+# CA1016: Mark assemblies with assembly version
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1016
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1016.severity = warning
+
+# CA1017: Mark assemblies with ComVisible
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1017
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1017.severity = none
+
+# CA1018: Mark attributes with AttributeUsageAttribute
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1018
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1018.severity = warning
+
+# CA1019: Define accessors for attribute arguments
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1019
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1019.severity = warning
+
+# CA1021: Avoid out parameters
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1021
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1021.severity = none
+
+# CA1024: Use properties where appropriate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1024
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1024.severity = none
+
+# CA1027: Mark enums with FlagsAttribute
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1027
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1027.severity = warning
+
+# CA1028: Enum Storage should be Int32
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1028
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1028.severity = warning
+
+# CA1030: Use events where appropriate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1030
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1030.severity = warning
+
+# CA1031: Do not catch general exception types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1031
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1031.severity = none
+
+# CA1032: Implement standard exception constructors
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1032
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1032.severity = none
+
+# CA1033: Interface methods should be callable by child types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1033
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1033.severity = warning
+
+# CA1034: Nested types should not be visible
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1034
+# Enabled: False, Severity: warning
+# Disabled, because convenient for nested option classes, DTOs in controllers, etc.
+dotnet_diagnostic.CA1034.severity = none
+
+# CA1036: Override methods on comparable types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1036
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1036.severity = warning
+
+# CA1040: Avoid empty interfaces
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1040
+# Enabled: False, Severity: warning
+# Disabled to allow marker interfaces
+dotnet_diagnostic.CA1040.severity = none
+
+# CA1041: Provide ObsoleteAttribute message
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1041
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1041.severity = warning
+
+# CA1043: Use Integral Or String Argument For Indexers
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1043
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1043.severity = warning
+
+# CA1044: Properties should not be write only
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1044
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1044.severity = warning
+
+# CA1045: Do not pass types by reference
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1045
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1045.severity = none
+
+# CA1046: Do not overload equality operator on reference types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1046
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1046.severity = warning
+
+# CA1047: Do not declare protected member in sealed type
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1047
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1047.severity = warning
+
+# CA1050: Declare types in namespaces
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1050
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1050.severity = warning
+
+# CA1051: Do not declare visible instance fields
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1051
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1051.severity = warning
+
+# CA1052: Static holder types should be Static or NotInheritable
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1052
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1052.severity = warning
+
+# CA1054: URI-like parameters should not be strings
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1054
+# Enabled: False, Severity: warning
+# Disabled because it's simply annoying and the .NET runtime contains method that accept URI strings
+dotnet_diagnostic.CA1054.severity = none
+
+# CA1055: URI-like return values should not be strings
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1055
+# Enabled: False, Severity: warning
+# Disabled for convenience and ease of adoption, returning URI strings can also be useful
+dotnet_diagnostic.CA1055.severity = none
+
+# CA1056: URI-like properties should not be strings
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1056
+# Enabled: False, Severity: warning
+# Disabled because it's sometimes inconvenient to force properties to use Uri instead of strings
+dotnet_diagnostic.CA1056.severity = none
+
+# CA1058: Types should not extend certain base types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1058
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1058.severity = warning
+
+# CA1060: Move pinvokes to native methods class
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1060
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1060.severity = none
+
+# CA1061: Do not hide base class methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1061
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1061.severity = warning
+
+# CA1062: Validate arguments of public methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1062
+# Enabled: False, Severity: warning
+# Disabled because there's no need to always enforce null-checks thanks to nullable reference types
+dotnet_diagnostic.CA1062.severity = none
+
+# CA1063: Implement IDisposable Correctly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1063
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1063.severity = warning
+
+# CA1064: Exceptions should be public
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1064
+# Enabled: False, Severity: warning
+# Disabled, because it's not always relevant in the context of an internal application
+dotnet_diagnostic.CA1064.severity = none
+
+# CA1065: Do not raise exceptions in unexpected locations
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1065
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1065.severity = warning
+
+# CA1066: Implement IEquatable when overriding Object.Equals
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1066
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1066.severity = warning
+
+# CA1067: Override Object.Equals(object) when implementing IEquatable<T>
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1067
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1067.severity = warning
+
+# CA1068: CancellationToken parameters must come last
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1068
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1068.severity = warning
+
+# CA1069: Enums values should not be duplicated
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1069
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1069.severity = warning
+
+# CA1070: Do not declare event fields as virtual
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1070
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1070.severity = warning
+
+# CA1200: Avoid using cref tags with a prefix
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1200
+# Enabled: True, Severity: silent
+# Disabled because using 'T:' prefix is actually convenient VS importing the namespace of the referenced type
+dotnet_diagnostic.CA1200.severity = none
+
+# CA1303: Do not pass literals as localized parameters
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1303
+# Enabled: False, Severity: warning
+# disabled, using *.resx files for user-displayed messages might be too much
+dotnet_diagnostic.CA1303.severity = none
+
+# CA1304: Specify CultureInfo
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1304
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1304.severity = suggestion
+
+# CA1305: Specify IFormatProvider
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1305
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1305.severity = suggestion
+
+# CA1307: Specify StringComparison for clarity
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1307
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1307.severity = suggestion
+
+# CA1308: Normalize strings to uppercase
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1308
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1308.severity = none
+
+# CA1309: Use ordinal string comparison
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1309
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1309.severity = suggestion
+
+# CA1310: Specify StringComparison for correctness
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1310
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1310.severity = suggestion
+
+# CA1311: Specify a culture or use an invariant version
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1311
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1311.severity = suggestion
+
+# CA1401: P/Invokes should not be visible
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1401
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1401.severity = warning
+
+# CA1416: Validate platform compatibility
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1416.severity = warning
+
+# CA1417: Do not use 'OutAttribute' on string parameters for P/Invokes
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1417
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1417.severity = warning
+
+# CA1418: Use valid platform string
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1418
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1418.severity = warning
+
+# CA1419: Provide a parameterless constructor that is as visible as the containing type for concrete types derived from 'System.Runtime.InteropServices.SafeHandle'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1419
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1419.severity = warning
+
+# CA1420: Property, type, or attribute requires runtime marshalling
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1420
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1420.severity = warning
+
+# CA1421: This method uses runtime marshalling even when the 'DisableRuntimeMarshallingAttribute' is applied
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1421
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1421.severity = warning
+
+# CA1422: Validate platform compatibility
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1422
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1422.severity = warning
+
+# CA1501: Avoid excessive inheritance
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1501
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1501.severity = none
+
+# CA1502: Avoid excessive complexity
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1502
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1502.severity = none
+
+# CA1505: Avoid unmaintainable code
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1505
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1505.severity = none
+
+# CA1506: Avoid excessive class coupling
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1506
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1506.severity = none
+
+# CA1507: Use nameof to express symbol names
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1507
+# Enabled: True, Severity: suggestion
+# Disabled because it was suggested when using [Newtonsoft.Json.JsonProperty],
+# which could lead to JSON breaking changes in case of refactoring or obfuscation
+dotnet_diagnostic.CA1507.severity = none
+
+# CA1508: Avoid dead conditional code
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1508
+# Enabled: False, Severity: warning
+# Disabled because provides false positives in cases with double checked locking and has performance impact
+dotnet_diagnostic.CA1508.severity = none
+
+# CA1509: Invalid entry in code metrics rule specification file
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1509
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1509.severity = none
+
+# CA1510: Use ArgumentNullException throw helper
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1510
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1510.severity = suggestion
+
+# CA1511: Use ArgumentException throw helper
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1511
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1511.severity = warning
+
+# CA1512: Use ArgumentOutOfRangeException throw helper
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1512
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1512.severity = warning
+
+# CA1513: Use ObjectDisposedException throw helper
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1513
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1513.severity = warning
+
+# CA1700: Do not name enum values 'Reserved'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1700
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1700.severity = warning
+
+# CA1707: Identifiers should not contain underscores
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1707
+# Enabled: True, Severity: silent
+# Disabled because this is a common practice in test method names (and other cases)
+dotnet_diagnostic.CA1707.severity = none
+
+# CA1708: Identifiers should differ by more than case
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1708
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1708.severity = warning
+
+# CA1710: Identifiers should have correct suffix
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1710
+# Enabled: True, Severity: silent
+# Disabled because it's simply annoying (streams types must end with 'Stream', same for queue, stack, collection, dictionary, etc.)
+dotnet_diagnostic.CA1710.severity = none
+
+# CA1711: Identifiers should not have incorrect suffix
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1711
+# Enabled: True, Severity: silent
+# Disabled because it's sometimes OK to name something ending with Collection even if it doesn't implement ICollection
+dotnet_diagnostic.CA1711.severity = none
+
+# CA1712: Do not prefix enum values with type name
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1712
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1712.severity = warning
+
+# CA1713: Events should not have 'Before' or 'After' prefix
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1713
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1713.severity = warning
+
+# CA1715: Identifiers should have correct prefix
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1715
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1715.severity = warning
+
+# CA1716: Identifiers should not match keywords
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1716
+# Enabled: True, Severity: silent
+# Some method names such as "Get" or "Set" should be allowed. This rule exists mostly because of VB.NET. As we don't use it, this is fine to disable the rule.
+dotnet_diagnostic.CA1716.severity = none
+
+# CA1720: Identifier contains type name
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1720
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1720.severity = none
+
+# CA1721: Property names should not match get methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1721
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1721.severity = warning
+
+# CA1724: Type names should not match namespaces
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1724
+# Enabled: False, Severity: warning
+# Disabled to increase the adoption of this library, as many projects have classes with the same name of the namespace
+dotnet_diagnostic.CA1724.severity = none
+
+# CA1725: Parameter names should match base declaration
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1725
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1725.severity = warning
+
+# CA1727: Use PascalCase for named placeholders
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1727
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1727.severity = warning
+
+# CA1802: Use literals where appropriate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1802
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1802.severity = warning
+
+# CA1805: Do not initialize unnecessarily
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1805
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1805.severity = warning
+
+# CA1806: Do not ignore method results
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1806
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1806.severity = warning
+
+# CA1810: Initialize reference type static fields inline
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1810
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1810.severity = warning
+
+# CA1812: Avoid uninstantiated internal classes
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1812
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1812.severity = none
+
+# CA1813: Avoid unsealed attributes
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1813
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1813.severity = warning
+
+# CA1814: Prefer jagged arrays over multidimensional
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1814
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1814.severity = warning
+
+# CA1815: Override equals and operator equals on value types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1815
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1815.severity = warning
+
+# CA1816: Dispose methods should call SuppressFinalize
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1816
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1816.severity = warning
+
+# CA1819: Properties should not return arrays
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1819
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1819.severity = none
+
+# CA1820: Test for empty strings using string length
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1820
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1820.severity = warning
+
+# CA1821: Remove empty Finalizers
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1821
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1821.severity = warning
+
+# CA1822: Mark members as static
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1822
+# Enabled: True, Severity: suggestion
+# Disabled because the compiler might not always be aware of how a member is used
+dotnet_diagnostic.CA1822.severity = none
+
+# CA1823: Avoid unused private fields
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1823
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1823.severity = warning
+
+# CA1824: Mark assemblies with NeutralResourcesLanguageAttribute
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1824
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1824.severity = warning
+
+# CA1825: Avoid zero-length array allocations
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1825
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1825.severity = warning
+
+# CA1826: Do not use Enumerable methods on indexable collections
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1826
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1826.severity = warning
+
+# CA1827: Do not use Count() or LongCount() when Any() can be used
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1827
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1827.severity = warning
+
+# CA1828: Do not use CountAsync() or LongCountAsync() when AnyAsync() can be used
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1828
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1828.severity = warning
+
+# CA1829: Use Length/Count property instead of Count() when available
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1829
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1829.severity = warning
+
+# CA1830: Prefer strongly-typed Append and Insert method overloads on StringBuilder
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1830
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1830.severity = warning
+
+# CA1831: Use AsSpan or AsMemory instead of Range-based indexers when appropriate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1831
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1831.severity = warning
+
+# CA1832: Use AsSpan or AsMemory instead of Range-based indexers when appropriate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1832
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1832.severity = warning
+
+# CA1833: Use AsSpan or AsMemory instead of Range-based indexers when appropriate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1833
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1833.severity = warning
+
+# CA1834: Consider using 'StringBuilder.Append(char)' when applicable
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1834
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1834.severity = warning
+
+# CA1835: Prefer the 'Memory'-based overloads for 'ReadAsync' and 'WriteAsync'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1835
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1835.severity = warning
+
+# CA1836: Prefer IsEmpty over Count
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1836
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1836.severity = warning
+
+# CA1837: Use 'Environment.ProcessId'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1837
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1837.severity = warning
+
+# CA1838: Avoid 'StringBuilder' parameters for P/Invokes
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1838
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1838.severity = warning
+
+# CA1839: Use 'Environment.ProcessPath'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1839
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1839.severity = warning
+
+# CA1840: Use 'Environment.CurrentManagedThreadId'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1840
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1840.severity = warning
+
+# CA1841: Prefer Dictionary.Contains methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1841
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1841.severity = warning
+
+# CA1842: Do not use 'WhenAll' with a single task
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1842
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1842.severity = warning
+
+# CA1843: Do not use 'WaitAll' with a single task
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1843
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1843.severity = warning
+
+# CA1844: Provide memory-based overrides of async methods when subclassing 'Stream'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1844
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1844.severity = warning
+
+# CA1845: Use span-based 'string.Concat'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1845
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1845.severity = warning
+
+# CA1846: Prefer 'AsSpan' over 'Substring'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1846
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1846.severity = warning
+
+# CA1847: Use char literal for a single character lookup
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1847
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1847.severity = warning
+
+# CA1848: Use the LoggerMessage delegates
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1848
+# Enabled: True, Severity: silent
+# Disabled because high-performance logging is overkill in most cases (except in libs with hot paths)
+dotnet_diagnostic.CA1848.severity = none
+
+# CA1849: Call async methods when in an async method
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1849
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1849.severity = warning
+
+# CA1850: Prefer static 'HashData' method over 'ComputeHash'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1850
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1850.severity = warning
+
+# CA1851: Possible multiple enumerations of 'IEnumerable' collection
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1851
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1851.severity = warning
+
+# CA1852: Seal internal types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1852
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA1852.severity = warning
+
+# CA1853: Unnecessary call to 'Dictionary.ContainsKey(key)'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1853
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1853.severity = warning
+
+# CA1854: Prefer the 'IDictionary.TryGetValue(TKey, out TValue)' method
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1854
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1854.severity = warning
+
+# CA1855: Prefer 'Clear' over 'Fill'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1855
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1855.severity = warning
+
+# CA1856: Incorrect usage of ConstantExpected attribute
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1856
+# Enabled: True, Severity: error
+dotnet_diagnostic.CA1856.severity = warning
+
+# CA1857: A constant is expected for the parameter
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1857
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA1857.severity = warning
+
+# CA1858: Use 'StartsWith' instead of 'IndexOf'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1858
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1858.severity = warning
+
+# CA1859: Use concrete types when possible for improved performance
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1859
+# Enabled: True, Severity: suggestion
+# Disabled, down-casting doesn't degrade performance that much
+dotnet_diagnostic.CA1859.severity = none
+
+# CA1860: Avoid using 'Enumerable.Any()' extension method
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1860
+# Enabled: True, Severity: suggestion
+# Disabled because the modern version of 'Any()' has been significantly optimized for types that implement ICollection
+# 'Any' may also be considered more readable in some cases
+dotnet_diagnostic.CA1860.severity = none
+
+# CA1861: Avoid constant arrays as arguments
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1861
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1861.severity = warning
+
+# CA1862: Use the 'StringComparison' method overloads to perform case-insensitive string comparisons
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1862
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1862.severity = warning
+
+# CA1863: Use 'CompositeFormat'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1863
+# Enabled: True, Severity: silent
+# Disabled, this is fairly new and the performance gains over string.Format isn't worth it
+dotnet_diagnostic.CA1863.severity = none
+
+# CA1864: Prefer the 'IDictionary.TryAdd(TKey, TValue)' method
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1864
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1864.severity = warning
+
+# CA1865: Use char overload
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1865
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1865.severity = warning
+
+# CA1866: Use char overload
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1866
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1866.severity = warning
+
+# CA1867: Use char overload
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1867
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1867.severity = warning
+
+# CA1868: Unnecessary call to 'Contains(item)'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1868
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1868.severity = warning
+
+# CA1869: Cache and reuse 'JsonSerializerOptions' instances
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1869
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1869.severity = warning
+
+# CA1870: Use a cached 'SearchValues' instance
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1870
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1870.severity = warning
+
+# CA2000: Dispose objects before losing scope
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2000
+# Enabled: False, Severity: warning
+# Disabled because disposables don't always need to be disposed in the current scope (ex: HttpClients provided by IHttpClientFactory)
+dotnet_diagnostic.CA2000.severity = none
+
+# CA2002: Do not lock on objects with weak identity
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2002
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2002.severity = warning
+
+# CA2007: Consider calling ConfigureAwait on the awaited task
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2007
+# Enabled: False, Severity: warning
+# Disabled because using ConfigureAwait(true) isn't necessary in ASP.NET Core (MVC & APIs) as there is no synchronization context
+dotnet_diagnostic.CA2007.severity = none
+
+# CA2008: Do not create tasks without passing a TaskScheduler
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2008
+# Enabled: False, Severity: warning
+# Disabled because it's OK to use the default scheduler in most applications (for desktop ones, this might be different)
+dotnet_diagnostic.CA2008.severity = none
+
+# CA2009: Do not call ToImmutableCollection on an ImmutableCollection value
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2009
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2009.severity = warning
+
+# CA2011: Avoid infinite recursion
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2011
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2011.severity = warning
+
+# CA2012: Use ValueTasks correctly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2012
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2012.severity = warning
+
+# CA2013: Do not use ReferenceEquals with value types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2013
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2013.severity = warning
+
+# CA2014: Do not use stackalloc in loops
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2014
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2014.severity = warning
+
+# CA2015: Do not define finalizers for types derived from MemoryManager<T>
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2015
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2015.severity = warning
+
+# CA2016: Forward the 'CancellationToken' parameter to methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2016
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2016.severity = warning
+
+# CA2017: Parameter count mismatch
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2017
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2017.severity = warning
+
+# CA2018: 'Buffer.BlockCopy' expects the number of bytes to be copied for the 'count' argument
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2018
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2018.severity = warning
+
+# CA2019: Improper 'ThreadStatic' field initialization
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2019
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2019.severity = warning
+
+# CA2020: Prevent behavioral change
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2020
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2020.severity = warning
+
+# CA2021: Do not call Enumerable.Cast<T> or Enumerable.OfType<T> with incompatible types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2021
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2021.severity = warning
+
+# CA2100: Review SQL queries for security vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2100
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2100.severity = warning
+
+# CA2101: Specify marshaling for P/Invoke string arguments
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2101
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2101.severity = warning
+
+# CA2119: Seal methods that satisfy private interfaces
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2119
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2119.severity = warning
+
+# CA2153: Do Not Catch Corrupted State Exceptions
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2153
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2153.severity = warning
+
+# CA2200: Rethrow to preserve stack details
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2200
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2200.severity = warning
+
+# CA2201: Do not raise reserved exception types
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2201
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA2201.severity = suggestion
+
+# CA2207: Initialize value type static fields inline
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2207
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2207.severity = warning
+
+# CA2208: Instantiate argument exceptions correctly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2208
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2208.severity = warning
+
+# CA2211: Non-constant fields should not be visible
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2211
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2211.severity = warning
+
+# CA2213: Disposable fields should be disposed
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2213
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2213.severity = warning
+
+# CA2214: Do not call overridable methods in constructors
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2214
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2214.severity = warning
+
+# CA2215: Dispose methods should call base class dispose
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2215
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA2215.severity = warning
+
+# CA2216: Disposable types should declare finalizer
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2216
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2216.severity = warning
+
+# CA2217: Do not mark enums with FlagsAttribute
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2217
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2217.severity = warning
+
+# CA2218: Override GetHashCode on overriding Equals
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2218
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2218.severity = warning
+
+# CA2219: Do not raise exceptions in finally clauses
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2219
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2219.severity = warning
+
+# CA2224: Override Equals on overloading operator equals
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2224
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2224.severity = warning
+
+# CA2225: Operator overloads have named alternates
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2225
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2225.severity = none
+
+# CA2226: Operators should have symmetrical overloads
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2226
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2226.severity = warning
+
+# CA2227: Collection properties should be read only
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2227
+# Enabled: False, Severity: warning
+# Disabled to allow collections to have setters (ex: JSON serialization)
+dotnet_diagnostic.CA2227.severity = none
+
+# CA2231: Overload operator equals on overriding value type Equals
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2231
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2231.severity = warning
+
+# CA2234: Pass system uri objects instead of strings
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2234
+# Enabled: False, Severity: warning
+# Disabled, it's more convenient to pass strings in some cases
+dotnet_diagnostic.CA2234.severity = none
+
+# CA2235: Mark all non-serializable fields
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2235
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2235.severity = warning
+
+# CA2237: Mark ISerializable types with serializable
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2237
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2237.severity = warning
+
+# CA2241: Provide correct arguments to formatting methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2241
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2241.severity = warning
+
+# CA2242: Test for NaN correctly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2242
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2242.severity = warning
+
+# CA2243: Attribute string literals should parse correctly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2243
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2243.severity = warning
+
+# CA2244: Do not duplicate indexed element initializations
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2244
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2244.severity = warning
+
+# CA2245: Do not assign a property to itself
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2245
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2245.severity = warning
+
+# CA2246: Assigning symbol and its member in the same statement
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2246
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2246.severity = warning
+
+# CA2247: Argument passed to TaskCompletionSource constructor should be TaskCreationOptions enum instead of TaskContinuationOptions enum
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2247
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2247.severity = warning
+
+# CA2248: Provide correct 'enum' argument to 'Enum.HasFlag'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2248
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2248.severity = warning
+
+# CA2249: Consider using 'string.Contains' instead of 'string.IndexOf'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2249
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2249.severity = warning
+
+# CA2250: Use 'ThrowIfCancellationRequested'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2250
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2250.severity = warning
+
+# CA2251: Use 'string.Equals'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2251
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA2251.severity = warning
+
+# CA2252: This API requires opting into preview features
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2252
+# Enabled: True, Severity: error
+dotnet_diagnostic.CA2252.severity = warning
+
+# CA2253: Named placeholders should not be numeric values
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2253
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2253.severity = warning
+
+# CA2254: Template should be a static expression
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2254
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2254.severity = warning
+
+# CA2255: The 'ModuleInitializer' attribute should not be used in libraries
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2255
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2255.severity = warning
+
+# CA2256: All members declared in parent interfaces must have an implementation in a DynamicInterfaceCastableImplementation-attributed interface
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2256
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2256.severity = warning
+
+# CA2257: Members defined on an interface with the 'DynamicInterfaceCastableImplementationAttribute' should be 'static'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2257
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2257.severity = warning
+
+# CA2258: Providing a 'DynamicInterfaceCastableImplementation' interface in Visual Basic is unsupported
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2258
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2258.severity = warning
+
+# CA2259: 'ThreadStatic' only affects static fields
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2259
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2259.severity = warning
+
+# CA2260: Use correct type parameter
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2260
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2260.severity = warning
+
+# CA2261: Do not use ConfigureAwaitOptions.SuppressThrowing with Task<TResult>
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2261
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2261.severity = warning
+
+# CA2300: Do not use insecure deserializer BinaryFormatter
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2300
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2300.severity = warning
+
+# CA2301: Do not call BinaryFormatter.Deserialize without first setting BinaryFormatter.Binder
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2301
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2301.severity = warning
+
+# CA2302: Ensure BinaryFormatter.Binder is set before calling BinaryFormatter.Deserialize
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2302
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2302.severity = warning
+
+# CA2305: Do not use insecure deserializer LosFormatter
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2305
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2305.severity = warning
+
+# CA2310: Do not use insecure deserializer NetDataContractSerializer
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2310
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2310.severity = warning
+
+# CA2311: Do not deserialize without first setting NetDataContractSerializer.Binder
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2311
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2311.severity = warning
+
+# CA2312: Ensure NetDataContractSerializer.Binder is set before deserializing
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2312
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2312.severity = warning
+
+# CA2315: Do not use insecure deserializer ObjectStateFormatter
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2315
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2315.severity = warning
+
+# CA2321: Do not deserialize with JavaScriptSerializer using a SimpleTypeResolver
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2321
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2321.severity = warning
+
+# CA2322: Ensure JavaScriptSerializer is not initialized with SimpleTypeResolver before deserializing
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2322
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2322.severity = warning
+
+# CA2326: Do not use TypeNameHandling values other than None
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2326
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2326.severity = warning
+
+# CA2327: Do not use insecure JsonSerializerSettings
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2327
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2327.severity = warning
+
+# CA2328: Ensure that JsonSerializerSettings are secure
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2328
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2328.severity = warning
+
+# CA2329: Do not deserialize with JsonSerializer using an insecure configuration
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2329
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2329.severity = warning
+
+# CA2330: Ensure that JsonSerializer has a secure configuration when deserializing
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2330
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2330.severity = warning
+
+# CA2350: Do not use DataTable.ReadXml() with untrusted data
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2350
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2350.severity = warning
+
+# CA2351: Do not use DataSet.ReadXml() with untrusted data
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2351
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2351.severity = warning
+
+# CA2352: Unsafe DataSet or DataTable in serializable type can be vulnerable to remote code execution attacks
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2352
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2352.severity = warning
+
+# CA2353: Unsafe DataSet or DataTable in serializable type
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2353
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2353.severity = warning
+
+# CA2354: Unsafe DataSet or DataTable in deserialized object graph can be vulnerable to remote code execution attacks
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2354
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2354.severity = warning
+
+# CA2355: Unsafe DataSet or DataTable type found in deserializable object graph
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2355
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2355.severity = warning
+
+# CA2356: Unsafe DataSet or DataTable type in web deserializable object graph
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2356
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2356.severity = warning
+
+# CA2361: Ensure auto-generated class containing DataSet.ReadXml() is not used with untrusted data
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2361
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2361.severity = warning
+
+# CA2362: Unsafe DataSet or DataTable in auto-generated serializable type can be vulnerable to remote code execution attacks
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2362
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA2362.severity = warning
+
+# CA3001: Review code for SQL injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3001
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3001.severity = none
+
+# CA3002: Review code for XSS vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3002
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3002.severity = none
+
+# CA3003: Review code for file path injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3003
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3003.severity = none
+
+# CA3004: Review code for information disclosure vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3004
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+# Also, the rule is relevant for web apps but didn't seem to work with basic ASP.NET Core setup
+dotnet_diagnostic.CA3004.severity = none
+
+# CA3005: Review code for LDAP injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3005
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3005.severity = none
+
+# CA3006: Review code for process command injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3006
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3006.severity = none
+
+# CA3007: Review code for open redirect vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3007
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+# Also, the rule is relevant for web apps but didn't seem to work with basic ASP.NET Core setup
+dotnet_diagnostic.CA3007.severity = none
+
+# CA3008: Review code for XPath injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3008
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3008.severity = none
+
+# CA3009: Review code for XML injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3009
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3009.severity = none
+
+# CA3010: Review code for XAML injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3010
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3010.severity = none
+
+# CA3011: Review code for DLL injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3011
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3011.severity = none
+
+# CA3012: Review code for regex injection vulnerabilities
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3012
+# Enabled: False, Severity: warning
+# Highly unlikely to be necessary when using a proper SAST tool
+# Also, EXTREMELY expensive to execute on a medium-sized codebase (more than 70% of the total time spent on the analysis)
+# Enable them on a case by case basis if you have a specific need for them
+dotnet_diagnostic.CA3012.severity = none
+
+# CA3061: Do Not Add Schema By URL
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3061
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA3061.severity = warning
+
+# CA3075: Insecure DTD processing in XML
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3075
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA3075.severity = warning
+
+# CA3076: Insecure XSLT script processing
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3076
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA3076.severity = none
+
+# CA3077: Insecure Processing in API Design, XmlDocument and XmlTextReader
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3077
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA3077.severity = warning
+
+# CA3147: Mark Verb Handlers With Validate Antiforgery Token
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca3147
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA3147.severity = warning
+
+# CA5350: Do Not Use Weak Cryptographic Algorithms
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5350
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5350.severity = warning
+
+# CA5351: Do Not Use Broken Cryptographic Algorithms
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5351
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5351.severity = warning
+
+# CA5358: Review cipher mode usage with cryptography experts
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5358
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5358.severity = warning
+
+# CA5359: Do Not Disable Certificate Validation
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5359
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5359.severity = warning
+
+# CA5360: Do Not Call Dangerous Methods In Deserialization
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5360
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5360.severity = warning
+
+# CA5361: Do Not Disable SChannel Use of Strong Crypto
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5361
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5361.severity = warning
+
+# CA5362: Potential reference cycle in deserialized object graph
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5362
+# Enabled: False, Severity: warning
+# Disabled because the use of SerializableAttribute on our types is almost non-existent
+dotnet_diagnostic.CA5362.severity = none
+
+# CA5363: Do Not Disable Request Validation
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5363
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5363.severity = warning
+
+# CA5364: Do Not Use Deprecated Security Protocols
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5364
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5364.severity = warning
+
+# CA5365: Do Not Disable HTTP Header Checking
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5365
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5365.severity = warning
+
+# CA5366: Use XmlReader for 'DataSet.ReadXml()'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5366
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5366.severity = warning
+
+# CA5367: Do Not Serialize Types With Pointer Fields
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5367
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5367.severity = warning
+
+# CA5368: Set ViewStateUserKey For Classes Derived From Page
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5368
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5368.severity = warning
+
+# CA5369: Use XmlReader for 'XmlSerializer.Deserialize()'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5369
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5369.severity = warning
+
+# CA5370: Use XmlReader for XmlValidatingReader constructor
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5370
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5370.severity = warning
+
+# CA5371: Use XmlReader for 'XmlSchema.Read()'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5371
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5371.severity = warning
+
+# CA5372: Use XmlReader for XPathDocument constructor
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5372
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5372.severity = warning
+
+# CA5373: Do not use obsolete key derivation function
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5373
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5373.severity = warning
+
+# CA5374: Do Not Use XslTransform
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5374
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5374.severity = warning
+
+# CA5375: Do Not Use Account Shared Access Signature
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5375
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5375.severity = warning
+
+# CA5376: Use SharedAccessProtocol HttpsOnly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5376
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5376.severity = warning
+
+# CA5377: Use Container Level Access Policy
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5377
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5377.severity = warning
+
+# CA5378: Do not disable ServicePointManagerSecurityProtocols
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5378
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5378.severity = warning
+
+# CA5379: Ensure Key Derivation Function algorithm is sufficiently strong
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5379
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5379.severity = warning
+
+# CA5380: Do Not Add Certificates To Root Store
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5380
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5380.severity = warning
+
+# CA5381: Ensure Certificates Are Not Added To Root Store
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5381
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5381.severity = warning
+
+# CA5382: Use Secure Cookies In ASP.NET Core
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5382
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5382.severity = warning
+
+# CA5383: Ensure Use Secure Cookies In ASP.NET Core
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5383
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5383.severity = warning
+
+# CA5384: Do Not Use Digital Signature Algorithm (DSA)
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5384
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5384.severity = warning
+
+# CA5385: Use Rivest-Shamir-Adleman (RSA) Algorithm With Sufficient Key Size
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5385
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5385.severity = warning
+
+# CA5386: Avoid hardcoding SecurityProtocolType value
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5386
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5386.severity = warning
+
+# CA5387: Do Not Use Weak Key Derivation Function With Insufficient Iteration Count
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5387
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5387.severity = warning
+
+# CA5388: Ensure Sufficient Iteration Count When Using Weak Key Derivation Function
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5388
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5388.severity = warning
+
+# CA5389: Do Not Add Archive Item's Path To The Target File System Path
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5389
+# Enabled: False, Severity: warning
+# Disabled because this rule is very expensive and using ZipArchive is not that common
+dotnet_diagnostic.CA5389.severity = none
+
+# CA5390: Do not hard-code encryption key
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5390
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5390.severity = warning
+
+# CA5391: Use antiforgery tokens in ASP.NET Core MVC controllers
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5391
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5391.severity = warning
+
+# CA5392: Use DefaultDllImportSearchPaths attribute for P/Invokes
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5392
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5392.severity = warning
+
+# CA5393: Do not use unsafe DllImportSearchPath value
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5393
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5393.severity = warning
+
+# CA5394: Do not use insecure randomness
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5394
+# Enabled: False, Severity: warning
+# Disabled because it's OK to use Random in non security-critical contexts
+dotnet_diagnostic.CA5394.severity = none
+
+# CA5395: Miss HttpVerb attribute for action methods
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5395
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5395.severity = warning
+
+# CA5396: Set HttpOnly to true for HttpCookie
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5396
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5396.severity = warning
+
+# CA5397: Do not use deprecated SslProtocols values
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5397
+# Enabled: True, Severity: silent
+dotnet_diagnostic.CA5397.severity = warning
+
+# CA5398: Avoid hardcoded SslProtocols values
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5398
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5398.severity = warning
+
+# CA5399: HttpClients should enable certificate revocation list checks
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5399
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5399.severity = none
+
+# CA5400: Ensure HttpClient certificate revocation list check is not disabled
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5400
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5400.severity = none
+
+# CA5401: Do not use CreateEncryptor with non-default IV
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5401
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5401.severity = warning
+
+# CA5402: Use CreateEncryptor with the default IV
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5402
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5402.severity = warning
+
+# CA5403: Do not hard-code certificate
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5403
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5403.severity = warning
+
+# CA5404: Do not disable token validation checks
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5404
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5404.severity = warning
+
+# CA5405: Do not always skip token validation in delegates
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca5405
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA5405.severity = warning
+

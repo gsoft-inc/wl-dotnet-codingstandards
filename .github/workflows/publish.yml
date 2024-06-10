@@ -22,3 +22,10 @@ jobs:
         env:
           NUGET_SOURCE: ${{ secrets.NUGET_SOURCE }}
           NUGET_API_KEY: ${{ secrets.WORKLEAP_NUGET_API_KEY }}
+
+  linearb:
+    needs: [main]
+    uses: gsoft-inc/wl-reusable-workflows/.github/workflows/linearb-deployment.yml@main
+    with:
+      environment: ${{ github.ref == 'refs/heads/main' && 'staging' || 'release' }}
+    secrets: inherit
