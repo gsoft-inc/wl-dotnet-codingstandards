@@ -5,6 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Workleap.DotNet.CodingStandards" Version="0.2.0" />
+    <PackageReference Include="Workleap.DotNet.CodingStandards" Version="0.5.0" />
   </ItemGroup>
 </Project>
