@@ -13,7 +13,7 @@
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.10.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic" Version="4.10.0" />
     <PackageReference Include="Microsoft.CodeAnalysis.VisualBasic.Workspaces" Version="4.10.0" />
-    <PackageReference Include="NuGet.Protocol" Version="6.10.0" />
+    <PackageReference Include="NuGet.Protocol" Version="6.10.1" />
   </ItemGroup>
 
 </Project>
