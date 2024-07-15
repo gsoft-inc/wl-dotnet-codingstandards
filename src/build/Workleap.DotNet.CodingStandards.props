@@ -29,4 +29,23 @@
     <!-- GenerateDocumentationFile must be set to true for IDE0005 (Remove unnecessary usings/imports) to work -->
     <GenerateDocumentationFile Condition="'$(GenerateDocumentationFile)' == ''">true</GenerateDocumentationFile>
   </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- Enable NuGet package auditing -->
+    <!-- https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages -->
+    <NuGetAudit Condition="'$(NuGetAudit)' == ''">true</NuGetAudit>
+
+    <!-- Audit direct and transitive packages -->
+    <NuGetAuditMode Condition="'$(NuGetAuditMode)' == ''">all</NuGetAuditMode>
+
+    <!-- Report low, moderate, high and critical advisories -->
+    <NuGetAuditLevel Condition="'$(NuGetAuditLevel)' == ''">low</NuGetAuditLevel>
+
+    <NuGetAuditTreatWarningsAsErrors Condition="('$(NuGetAuditTreatWarningsAsErrors)' == '') AND ($(ContinuousIntegrationBuild) == 'true' OR '$(Configuration)' == 'Release')">true</NuGetAuditTreatWarningsAsErrors>
+
+    <!-- Fails the build on CI or on release when a vulnerability is detected -->
+    <WarningsAsErrors Condition="$(NuGetAuditTreatWarningsAsErrors) == 'true'">
+      (WarningsAsErrors);NU1900;NU1901;NU1902;NU1903;NU1904
+    </WarningsAsErrors>
+  </PropertyGroup>
 </Project>

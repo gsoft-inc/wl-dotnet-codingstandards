@@ -99,4 +99,57 @@ public sealed class CodingStandardTests(PackageFixture fixture, ITestOutputHelpe
         Assert.False(data.HasError("IDE1006"));
         Assert.False(data.HasWarning("IDE1006"));
     }
+
+    [Fact]
+    public async Task ReportVulnerablePackage_Release_ShouldReportError()
+    {
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
+        project.AddCsprojFile(packageReferences: new Dictionary<string, string> { { "System.Text.Json", "8.0.1" } });
+        project.AddFile("sample.cs", """
+            Console.WriteLine();
+            """);
+        var data = await project.BuildAndGetOutput(["--configuration", "Release"]);
+        Assert.True(data.HasError("NU1903"));
+    }
+
+    [Fact]
+    public async Task ReportVulnerablePackage_Debug_ShouldReportWarning()
+    {
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
+        project.AddCsprojFile(packageReferences: new Dictionary<string, string> { { "System.Text.Json", "8.0.1" } });
+        project.AddFile("sample.cs", """
+            Console.WriteLine();
+            """);
+        var data = await project.BuildAndGetOutput(["--configuration", "Debug"]);
+        Assert.False(data.HasError("NU1903"));
+        Assert.True(data.HasWarning("NU1903"));
+    }
+    [Fact]
+    public async Task ReportVulnerablePackage_DisabledWarningOnPackage()
+    {
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
+        project.AddFile("test.csproj", $"""
+                <Project Sdk="Microsoft.NET.Sdk">
+                  <PropertyGroup>
+                    <OutputType>exe</OutputType>
+                    <TargetFramework>net$(NETCoreAppMaximumVersion)</TargetFramework>
+                    <ImplicitUsings>enable</ImplicitUsings>
+                    <Nullable>enable</Nullable>
+                    <ErrorLog>{ProjectBuilder.SarifFileName},version=2.1</ErrorLog>
+                  </PropertyGroup>
+                  
+                  <ItemGroup>
+                    <PackageReference Include="Workleap.DotNet.CodingStandards" Version="*" />
+                    <PackageReference Include="System.Text.Json" Version="8.0.1" NoWarn="NU1903" />
+                  </ItemGroup>
+                </Project>
+                """);
+
+        project.AddFile("sample.cs", """
+            Console.WriteLine();
+            """);
+        var data = await project.BuildAndGetOutput(["--configuration", "Release"]);
+        Assert.False(data.HasError("NU1903"));
+        Assert.False(data.HasWarning("NU1903"));
+    }
 }

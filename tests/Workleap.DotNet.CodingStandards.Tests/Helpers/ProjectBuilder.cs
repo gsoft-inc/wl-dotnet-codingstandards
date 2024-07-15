@@ -8,7 +8,7 @@ namespace Workleap.DotNet.CodingStandards.Tests.Helpers;
 
 internal sealed class ProjectBuilder : IDisposable
 {
-    private const string SarifFileName = "BuildOutput.sarif";
+    public const string SarifFileName = "BuildOutput.sarif";
 
     private readonly TemporaryDirectory _directory;
     private readonly ITestOutputHelper _testOutputHelper;
