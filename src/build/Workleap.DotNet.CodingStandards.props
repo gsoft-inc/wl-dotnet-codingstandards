@@ -33,16 +33,18 @@
   <PropertyGroup>
     <!-- Enable NuGet package auditing -->
     <!-- https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages -->
-    <NuGetAudit>true</NuGetAudit>
+    <NuGetAudit Condition="'$(NuGetAudit)' == ''">true</NuGetAudit>
 
     <!-- Audit direct and transitive packages -->
-    <NuGetAuditMode>all</NuGetAuditMode>
+    <NuGetAuditMode Condition="'$(NuGetAuditMode)' == ''">all</NuGetAuditMode>
 
     <!-- Report low, moderate, high and critical advisories -->
-    <NuGetAuditLevel>low</NuGetAuditLevel>
+    <NuGetAuditLevel Condition="'$(NuGetAuditLevel)' == ''">low</NuGetAuditLevel>
+
+    <NuGetAuditTreatWarningsAsErrors Condition="('$(NuGetAuditTreatWarningsAsErrors)' == '') AND ($(ContinuousIntegrationBuild) == 'true' OR '$(Configuration)' == 'Release')">true</NuGetAuditTreatWarningsAsErrors>
 
     <!-- Fails the build on CI or on release when a vulnerability is detected -->
-    <WarningsAsErrors Condition="$(ContinuousIntegrationBuild) == 'true' OR '$(Configuration)' == 'Release'">
+    <WarningsAsErrors Condition="$(NuGetAuditTreatWarningsAsErrors) == 'true'">
       (WarningsAsErrors);NU1900;NU1901;NU1902;NU1903;NU1904
     </WarningsAsErrors>
   </PropertyGroup>
