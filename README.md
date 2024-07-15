@@ -97,7 +97,7 @@ All rules included in this package **can be disabled or modified** in an `.edito
     dotnet_diagnostic.CA2200.severity = none
     ````
 
-- Disable NuGet auditing for a specific package
+- Disable [NuGet auditing](https://learn.microsoft.com/en-us/nuget/concepts/auditing-packages?WT.mc_id=DT-MVP-5003978) for a specific package
 
     ````xml
     <PackageReference Include="System.Formats.Asn1" Version="8.0.0" NoWarn="NU1903" />
