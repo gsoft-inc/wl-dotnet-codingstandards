@@ -505,6 +505,11 @@ dotnet_diagnostic.IDE0304.severity = suggestion
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE0305.severity = suggestion
 
+# IDE0320: Make anonymous function static
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0320
+# Enabled: True, Severity: silent
+dotnet_diagnostic.IDE0320.severity = silent
+
 # IDE1005: Delegate invocation can be simplified.
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide1005
 # Enabled: True, Severity: silent
