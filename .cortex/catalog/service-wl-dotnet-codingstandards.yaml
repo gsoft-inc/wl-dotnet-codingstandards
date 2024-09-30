@@ -1,7 +1,7 @@
 openapi: 3.0.1
 info:
   title: Workleap Dotnet Coding Standards
-  description: Workleap recommended coding standards for .NET and C#
+  description: Workleap recommended coding standards for .NET and C#.
   x-cortex-git:
     github:
       alias: gsoft-inc
