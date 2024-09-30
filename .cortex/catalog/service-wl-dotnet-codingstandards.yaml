@@ -1,6 +1,7 @@
 openapi: 3.0.1
 info:
   title: Workleap Dotnet Coding Standards
+  description: Workleap recommended coding standards for .NET and C#
   x-cortex-git:
     github:
       alias: gsoft-inc
@@ -9,14 +10,17 @@ info:
   x-cortex-type: library
   x-cortex-slack:
     channels:
-    - name: internal-dev-platform
-      notificationsEnabled: true
+      - name: internal-dev-platform
+        notificationsEnabled: true
   x-cortex-owners:
-  - name: team-internal-developer-platform-backend
-    type: GROUP
-    provider: CORTEX
+    - name: team-internal-developer-platform-backend
+      type: GROUP
+      provider: CORTEX
   x-cortex-link:
-  - type: cortex
-    url: https://github.com/gsoft-inc/wl-dotnet-codingstandards/blob/main/.cortex/catalog/service-wl-dotnet-codingstandards.yaml
-    name: Edit current Cortex entity in GitHub
+    - name: Documentation
+      type: documentation
+      url: https://gsoftdev.atlassian.net/wiki/spaces/TEC/pages/4038230120
+    - type: cortex
+      url: https://github.com/gsoft-inc/wl-dotnet-codingstandards/blob/main/.cortex/catalog/service-wl-dotnet-codingstandards.yaml
+      name: Edit current Cortex entity in GitHub
 
