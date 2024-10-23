@@ -8,3 +8,7 @@ resharper_check_namespace_highlighting = none
 
 # Already covered by file defaults "insert_final_newline"
 csharp_insert_final_newline = false
+
+# Fix to address https://youtrack.jetbrains.com/issue/RSRP-486359
+# where csharp_new_line_before_members_in_object_initializers would still inline object initializers
+resharper_wrap_object_and_collection_initializer_style = chop_always
