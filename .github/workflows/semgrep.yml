@@ -10,5 +10,6 @@ on:
 jobs:
   call-workflow-semgrep:
     permissions:
+      contents: read
       security-events: write
     uses: gsoft-inc/wl-reusable-workflows/.github/workflows/reusable-semgrep-workflow.yml@main
