@@ -395,6 +395,16 @@ dotnet_diagnostic.CA1512.severity = warning
 # Enabled: True, Severity: suggestion
 dotnet_diagnostic.CA1513.severity = warning
 
+# CA1514: Avoid redundant length argument
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1514
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1514.severity = suggestion
+
+# CA1515: Consider making public types internal
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1515
+# Enabled: False, Severity: warning
+dotnet_diagnostic.CA1515.severity = none
+
 # CA1700: Do not name enum values 'Reserved'
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1700
 # Enabled: False, Severity: warning
@@ -781,6 +791,16 @@ dotnet_diagnostic.CA1869.severity = warning
 # Enabled: True, Severity: suggestion
 dotnet_diagnostic.CA1870.severity = warning
 
+# CA1871: Do not pass a nullable struct to 'ArgumentNullException.ThrowIfNull'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1871
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1871.severity = suggestion
+
+# CA1872: Prefer 'Convert.ToHexString' and 'Convert.ToHexStringLower' over call chains based on 'BitConverter.ToString'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1872
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA1872.severity = suggestion
+
 # CA2000: Dispose objects before losing scope
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2000
 # Enabled: False, Severity: warning
@@ -863,6 +883,11 @@ dotnet_diagnostic.CA2020.severity = warning
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2021
 # Enabled: True, Severity: warning
 dotnet_diagnostic.CA2021.severity = warning
+
+# CA2022: Avoid inexact read with 'Stream.Read'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2022
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2022.severity = warning
 
 # CA2100: Review SQL queries for security vulnerabilities
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2100
@@ -1090,6 +1115,26 @@ dotnet_diagnostic.CA2260.severity = warning
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2261
 # Enabled: True, Severity: warning
 dotnet_diagnostic.CA2261.severity = warning
+
+# CA2262: Set 'MaxResponseHeadersLength' properly
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2262
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2262.severity = suggestion
+
+# CA2263: Prefer generic overload when type is known
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2263
+# Enabled: True, Severity: suggestion
+dotnet_diagnostic.CA2263.severity = suggestion
+
+# CA2264: Do not pass a non-nullable value to 'ArgumentNullException.ThrowIfNull'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2264
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2264.severity = warning
+
+# CA2265: Do not compare Span<T> to 'null' or 'default'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2265
+# Enabled: True, Severity: warning
+dotnet_diagnostic.CA2265.severity = warning
 
 # CA2300: Do not use insecure deserializer BinaryFormatter
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca2300
