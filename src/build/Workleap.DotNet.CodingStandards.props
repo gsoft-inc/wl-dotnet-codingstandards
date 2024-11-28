@@ -9,6 +9,9 @@
     <IncludeSymbols Condition="'$(IncludeSymbols)' == ''">true</IncludeSymbols>
     <SymbolPackageFormat Condition="'$(SymbolPackageFormat)' == ''">snupkg</SymbolPackageFormat>
 
+    <!-- Prevent warning when the .NET SDK version and the Microsoft.CodeAnalysis.NetAnalyzers version mismatch -->
+    <_SkipUpgradeNetAnalyzersNuGetWarning>true</_SkipUpgradeNetAnalyzersNuGetWarning>
+
     <!-- https://learn.microsoft.com/en-us/nuget/release-notes/nuget-5.5#summary-whats-new-in-55 -->
     <RestoreUseStaticGraphEvaluation Condition="'$(RestoreUseStaticGraphEvaluation)' == ''">true</RestoreUseStaticGraphEvaluation>
 
