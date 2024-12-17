@@ -73,7 +73,7 @@ await Parallel.ForEachAsync(packages, async (item, cancellationToken) =>
             var currentRuleConfiguration = currentConfiguration.Rules.FirstOrDefault(r => r.Id == rule.Id);
             var severity = currentRuleConfiguration != null ? currentRuleConfiguration.Severity : rule.DefaultEffectiveSeverity;
 
-            sb.AppendLine($"# {rule.Id}: {rule.Title?.TrimEnd()}");
+            sb.AppendLine($"# {rule.Id}: {rule.Title?.TrimEnd()}".TrimEnd());
             if (!string.IsNullOrEmpty(rule.Url))
             {
                 sb.AppendLine($"# Help link: {rule.Url?.TrimEnd()}");

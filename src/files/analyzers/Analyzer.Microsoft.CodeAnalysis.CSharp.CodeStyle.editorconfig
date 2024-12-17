@@ -510,6 +510,11 @@ dotnet_diagnostic.IDE0305.severity = suggestion
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE0320.severity = silent
 
+# IDE0330: Use 'System.Threading.Lock'
+# Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide0330
+# Enabled: True, Severity: silent
+dotnet_diagnostic.IDE0330.severity = suggestion
+
 # IDE1005: Delegate invocation can be simplified.
 # Help link: https://learn.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/ide1005
 # Enabled: True, Severity: silent
@@ -555,7 +560,7 @@ dotnet_diagnostic.IDE2005.severity = warning
 # Enabled: True, Severity: silent
 dotnet_diagnostic.IDE2006.severity = warning
 
-# RemoveUnnecessaryImportsFixable: 
+# RemoveUnnecessaryImportsFixable:
 # Enabled: True, Severity: silent
 dotnet_diagnostic.RemoveUnnecessaryImportsFixable.severity = silent
 
