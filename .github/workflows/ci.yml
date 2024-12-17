@@ -9,6 +9,11 @@ on:
     branches:
       - "renovate/**"
 
+# Prevent duplicate runs if Renovate falls back to creating a PR
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
 jobs:
   main:
     runs-on: ubuntu-latest
