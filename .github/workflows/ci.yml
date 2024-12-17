@@ -29,6 +29,9 @@ jobs:
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.GSOFT_NUGET_API_KEY }}
 
+      - name: Install NuGet
+        run: wget https://dist.nuget.org/win-x86-commandline/latest/nuget.exe -OutFile nuget.exe
+
       - run: ./Build.ps1
         shell: pwsh
         env:
