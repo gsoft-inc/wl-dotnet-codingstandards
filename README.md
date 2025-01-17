@@ -10,7 +10,7 @@ During development, the package will provide warnings :warning: when standards a
 > [!WARNING]
 > This package only works with [SDK-style projects](https://learn.microsoft.com/en-us/dotnet/core/project-sdk/overview). Older ASP.NET projects (non-Core) are not supported. The same applies to older desktop applications unless they have migrated to the new `Microsoft.NET.Sdk.WindowsDesktop` SDK.
 
-## Getting started
+## Usage
 
 Install the NuGet package in your project:
 
