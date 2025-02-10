@@ -21,8 +21,26 @@ public sealed class CodingStandardTests(PackageFixture fixture, ITestOutputHelpe
         using var project = new ProjectBuilder(fixture, testOutputHelper);
         project.AddCsprojFile();
         project.AddFile("sample.cs", "_ = System.DateTime.Now;");
-        var data = await project.BuildAndGetOutput(["--configuration", "Release", "/p:GITHUB_ACTIONS=true"]);
+        var data = await project.BuildAndGetOutput(["/p:GITHUB_ACTIONS=true"]);
         Assert.True(data.HasError("RS0030"));
+    }
+
+    [Fact]
+    public async Task MSBuildWarningsAsErrorOnDefaultConfiguration()
+    {
+        using var project = new ProjectBuilder(fixture, testOutputHelper);
+        project.AddCsprojFile(packageReferences: new Dictionary<string, string> { { "Azure.Identity", "1.10.4" } });
+        project.AddFile("sample.cs", """
+             namespace sample;
+             public static class Sample
+             {
+                 public static void Main(string[] args)
+                 {
+                 }
+             }
+             """);
+        var data = await project.BuildAndGetOutput();
+        Assert.True(data.HasWarning("NU1902"));
     }
 
     [Fact]
@@ -39,7 +57,7 @@ public sealed class CodingStandardTests(PackageFixture fixture, ITestOutputHelpe
                  }
              }
              """);
-        var data = await project.BuildAndGetOutput();
+        var data = await project.BuildAndGetOutput(["--configuration", "Debug"]);
         Assert.True(data.HasWarning("NU1902"));
     }
 
