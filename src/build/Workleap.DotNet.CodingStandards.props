@@ -23,7 +23,7 @@
     <ContinuousIntegrationBuild Condition="'$(TEAMCITY_VERSION)' != ''">true</ContinuousIntegrationBuild>
 
     <!-- TreatWarningsAsErrors and MSBuildTreatWarningsAsErrors are enabled for release builds, unless explicitly set -->
-    <TreatWarningsAsErrors Condition="(('$(TreatWarningsAsErrors)' == '') AND $(ContinuousIntegrationBuild) == 'true' OR '$(Configuration)' == 'Release')">true</TreatWarningsAsErrors>
+    <TreatWarningsAsErrors Condition="('$(TreatWarningsAsErrors)' == '') AND ($(ContinuousIntegrationBuild) == 'true' OR '$(Configuration)' == 'Release')">true</TreatWarningsAsErrors>
     <MSBuildTreatWarningsAsErrors Condition="'$(Configuration)' == 'Release' AND '$(MSBuildTreatWarningsAsErrors)' == ''">true</MSBuildTreatWarningsAsErrors>
 
     <!-- https://devblogs.microsoft.com/visualstudio/vs-toolbox-accelerate-your-builds-of-sdk-style-net-projects/ -->
