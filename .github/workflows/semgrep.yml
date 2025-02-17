@@ -12,4 +12,4 @@ jobs:
     permissions:
       contents: read
       security-events: write
-    uses: gsoft-inc/wl-reusable-workflows/.github/workflows/reusable-semgrep-workflow.yml@main
+    uses: workleap/wl-reusable-workflows/.github/workflows/reusable-semgrep-workflow.yml@main
