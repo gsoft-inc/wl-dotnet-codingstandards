@@ -1,7 +1,7 @@
 # Workleap.DotNet.CodingStandards
 
 [![nuget](https://img.shields.io/nuget/v/Workleap.DotNet.CodingStandards.svg?logo=nuget)](https://www.nuget.org/packages/Workleap.DotNet.CodingStandards/)
-[![build](https://img.shields.io/github/actions/workflow/status/gsoft-inc/wl-dotnet-codingstandards/publish.yml?logo=github&branch=main)](https://github.com/gsoft-inc/wl-dotnet-codingstandards/actions/workflows/publish.yml)
+[![build](https://img.shields.io/github/actions/workflow/status/gsoft-inc/wl-dotnet-codingstandards/publish.yml?logo=github&branch=main)](https://github.com/workleap/wl-dotnet-codingstandards/actions/workflows/publish.yml)
 
 This package provides a set of **programming standards for .NET projects**, including rules for **style**, **quality**, **security**, and **performance**. It relies on [built-in .NET analyzers](https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/overview) that are shipped with the .NET SDK.
 
@@ -131,4 +131,4 @@ To publish a new public (non-preview) version, simply create a new release on Gi
 
 ## License
 
-Copyright © 2024, Workleap. This code is licensed under the Apache License, Version 2.0. You may obtain a copy of this license at https://github.com/gsoft-inc/gsoft-license/blob/master/LICENSE.
+Copyright © 2024, Workleap. This code is licensed under the Apache License, Version 2.0. You may obtain a copy of this license at https://github.com/workleap/gsoft-license/blob/master/LICENSE.

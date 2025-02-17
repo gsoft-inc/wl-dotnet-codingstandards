@@ -38,7 +38,7 @@ jobs:
 
   linearb:
     needs: [main]
-    uses: gsoft-inc/wl-reusable-workflows/.github/workflows/linearb-deployment.yml@main
+    uses: workleap/wl-reusable-workflows/.github/workflows/linearb-deployment.yml@main
     with:
       environment: development
     secrets: inherit
