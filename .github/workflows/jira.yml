@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow-jira:
-    uses: gsoft-inc/wl-reusable-workflows/.github/workflows/reusable-jira-workflow.yml@main
+    uses: workleap/wl-reusable-workflows/.github/workflows/reusable-jira-workflow.yml@main
     with:
       branch_name: ${{ github.head_ref }}
     secrets: inherit
