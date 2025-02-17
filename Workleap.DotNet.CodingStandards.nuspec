@@ -8,7 +8,7 @@
     <developmentDependency>true</developmentDependency>
     <license type="expression">Apache-2.0</license>
     <readme>README.md</readme>
-    <projectUrl>https://github.com/gsoft-inc/wl-dotnet-codingstandards</projectUrl>
+    <projectUrl>https://github.com/workleap/wl-dotnet-codingstandards</projectUrl>
     <description>Workleap recommended coding standards for .NET.</description>
     <copyright>Copyright © Workleap</copyright>
     <repository type="git" url="$RepositoryUrl$" commit="$RepositoryCommit$" branch="$RepositoryBranch$" />
